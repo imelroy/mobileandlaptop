@@ -18,7 +18,8 @@ class CreateHomeModelsTable extends Migration
             $table->string("username");     
             $table->string("name");
             $table->string("email");
-            $table->string("phone");
+            $table->string("mobile");
+            $table->string("address");
             $table->string("password");
             $table->timestamps();
         });

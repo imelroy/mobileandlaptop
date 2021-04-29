@@ -2,7 +2,7 @@
 @section("content")
 <div class="container">
 <div class="row">
-<div class="col col-12 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
+<div class="col col-12 col-sm-9 col-md-9 col-lg-9 col-xl-9 col-xxl-9">
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -58,7 +58,7 @@
   </button>
 </div>
 </div>
-<div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+<div class="col col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
 <form action="/registerread" method="post">
 {{  csrf_field()  }}
 <table class="table table-borderless">
@@ -74,15 +74,19 @@
 </tr>
 <tr>
   <td>Email</td>
-  <td><input name="email" type="text" class="form-control"></td>
+  <td><input name="email" type="text" class="form-control" placeholder="name@example.com"></td>
 </tr>
 <tr>
-  <td>Phone</td>
-  <td><input name="phone" type="text" class="form-control"></td>
+  <td>Mobile</td>
+  <td><input name="mobile" type="text" class="form-control"></td>
+</tr>
+<tr>
+  <td>Address</td>
+  <td><input name="address" type="textarea" class="form-control"></td>
 </tr>
 <tr>
   <td>Password</td>
-  <td><input name="password" type="password" class="form-control"></td>
+  <td><input name="password" type="password" class="form-control" placeholder="Password"></td>
 </tr>
 <tr>
   <td></td>
@@ -90,10 +94,10 @@
 </tr>
 </table>
 
-
+</div>
 </div>
 
 </div>
 
-</div>
+
 @endsection

@@ -38,7 +38,8 @@ class HomeController extends Controller
         $getUsername= request('username'); 
         $getName= request('name');
         $getEmail= request('email');
-        $getPhone= request('phone');
+        $getMobile= request('mobile');
+        $getAddress= request('address');
         $getPassword= request('password');
         
         echo $getUsername;
@@ -47,8 +48,10 @@ class HomeController extends Controller
         echo "<br>";
         echo $getEmail;
         echo "<br>";
-        echo $getPhone;
+        echo $getMobile;
         echo "<br>";
+        echo $getAddress;
+        echo "<br>"; 
         echo $getPassword;
         echo "<br>";
         
@@ -58,7 +61,8 @@ class HomeController extends Controller
         $register->username=$getUsername;
         $register->name=$getName;
         $register->email=$getEmail;
-        $register->phone=$getPhone;
+        $register->mobile=$getMobile;
+        $register->address=$getAddress;
         $register->password=$getPassword;
 
         $register->save();

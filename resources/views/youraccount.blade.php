@@ -10,6 +10,10 @@
 <br>
 <h3><center><b><u>ACCOUNT</h3><br>
 <tr>
+    <td>Userame:</td>
+    <td><input name="username" type="text" class="form-control"></td>
+</tr>
+<tr>
     <td>Name:</td>
     <td><input name="name" type="text" class="form-control"></td>
 </tr>
@@ -23,7 +27,11 @@
 </tr>
 <tr>
     <td>Address:</td>
-    <td><input name="address" type="textbox" class="form-control"></td>
+    <td><input name="address" type="textarea" class="form-control"></td>
+</tr>
+<tr>
+    <td>Password:</td>
+    <td><input name="password" type="text" class="form-control"></td>
 </tr>
 <tr>
     <td></td>
