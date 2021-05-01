@@ -59,6 +59,7 @@
 </div>
 </div>
 <div class="col col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+
 <form action="/registerread" method="post">
 {{  csrf_field()  }}
 <table class="table table-borderless">
@@ -93,7 +94,7 @@
   <td><button class="btn btn-success">Sign up</button></td>
 </tr>
 </table>
-
+</form>
 </div>
 </div>
 </div>

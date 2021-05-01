@@ -14,14 +14,14 @@ class CreateHomeModelsTable extends Migration
     public function up()
     {
         Schema::create('home_models', function (Blueprint $table) {
-            $table->id();
+           // $table->id();
             $table->string("username");     
             $table->string("name");
             $table->string("email");
             $table->string("mobile");
             $table->string("address");
             $table->string("password");
-            $table->timestamps();
+            //$table->timestamps();
         });
     }
 

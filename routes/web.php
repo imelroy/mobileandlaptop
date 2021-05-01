@@ -7,6 +7,7 @@ use App\Http\Controllers\ContactusController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LaptopController;
 use App\Http\Controllers\YouraccountController;
+use App\Http\Controllers\MainController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,3 +30,9 @@ route::post('/registerread',[HomeController::class,'store']);
 route::get('/viewallmobiles',[MobileController::class,'index']);
 route::get('/youraccount',[YouraccountController::class,'create']);
 route::post('/youraccountread',[YouraccountController::class,'store']);
+//route::view('/login',"login");
+//route::post('/loginread',"HomeController@loginread");
+route::get('/auth/login',[MainController::class,'login'])->name('auth.login');
+route::get('/auth/register',[MainController::class,'register'])->name('auth.register');
+route::post('/auth/save',[MainController::class,'save'])->name('auth.save');
+route::post('/auth/check',[MainController::class,'check'])->name('auth.check');
