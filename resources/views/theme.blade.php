@@ -39,7 +39,7 @@
         </ul>
         <ul class="navbar-nav me-right mb-2 mb-lg-xl-xxl-0">
         <li class="nav-item">
-          <a class="nav-link" href="/login">Login</a>
+          <a class="nav-link" href="/auth/login">Login</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Cart</a>

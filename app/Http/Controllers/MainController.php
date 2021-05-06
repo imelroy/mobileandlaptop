@@ -14,15 +14,16 @@ class MainController extends Controller
     return view('auth.register');
 }
     function save(Request $request){
-        
+        //validates requests
         $request->validate([
-            'username'=>'required|unique:admins',
+            'username'=>'required',
             'name'=>'required',
             'email'=>'required|email|unique:admins',
             'mobile'=>'required',
             'address'=>'required',
             'password'=>'required|min:5|max:15'
         ]);
+        //insertion into  database
             $admin =new Admin;
             $admin->username= $request->username;
             $admin->name= $request->name;
@@ -40,16 +41,17 @@ class MainController extends Controller
             }
     }
     function check(Request $request) {
-        
+        //validates requests
         $request->validate([
             'email'=>'required|email',
             'password'=>'required|min:5|max:15'
         ]);
 
         $userInfo = Admin::where('email','=',$request->email)->first();
-        if(!userInfo){
+        if(!$userInfo){
             return back()-> with ('fail', 'We dont recognize your email');
         }else {
+            //check password
             if(Hash::check($request->password,$userInfo->password)){
                 $request->session()->put('LoggedUser',$userInfo->id);
                 return redirect('admin/dashboard');
@@ -57,6 +59,16 @@ class MainController extends Controller
                 return back()-> with ('fail', 'Incorrect Password');
             }
         }
+    }
+    function logout() {
+        if(session()->has('LoggedUser')){
+            session()->pull('LoggedUser');
+            return redirect('/auth/login');
+        }
+    }
+    function dashboard(Request $request){
+        $data=['LoggedUserInfo'=>Admin::where('id','=',session('LoggedUser'))->first()];
+        return view('admin.dashboard',$data);
     }
 }
  
