@@ -54,7 +54,7 @@ class MainController extends Controller
             //check password
             if(Hash::check($request->password,$userInfo->password)){
                 $request->session()->put('LoggedUser',$userInfo->id);
-                return redirect('admin/dashboard');
+                return redirect('/home');
             }else {
                 return back()-> with ('fail', 'Incorrect Password');
             }
@@ -63,12 +63,12 @@ class MainController extends Controller
     function logout() {
         if(session()->has('LoggedUser')){
             session()->pull('LoggedUser');
-            return redirect('/auth/login');
+            return redirect('/');
         }
     }
-    function dashboard(Request $request){
+    function youraccount(Request $request){
         $data=['LoggedUserInfo'=>Admin::where('id','=',session('LoggedUser'))->first()];
-        return view('admin.dashboard',$data);
+        return view('admin.youraccount',$data);
     }
 }
  

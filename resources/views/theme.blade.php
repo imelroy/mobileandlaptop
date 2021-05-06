@@ -18,7 +18,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a class="nav-link active" aria-current="page" href="/home">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/aboutus">About Us</a>
@@ -38,9 +38,7 @@
         </li>
         </ul>
         <ul class="navbar-nav me-right mb-2 mb-lg-xl-xxl-0">
-        <li class="nav-item">
-          <a class="nav-link" href="/auth/login">Login</a>
-        </li>
+        
         <li class="nav-item">
           <a class="nav-link" href="#">Cart</a>
         </li>
@@ -66,9 +64,9 @@
             Account
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/youraccount">Your Account</a></li>
+            <li><a class="dropdown-item" href="/admin/youraccount">Your Account</a></li>
             <li><a class="dropdown-item" href="#">Orders</a></li>
-            <li><a class="dropdown-item" href="#">Sign out</a></li>
+            <li><a class="dropdown-item" href="{{ route('auth.logout') }}">Sign out</a></li>
           </ul>
         </li>
         </ul>

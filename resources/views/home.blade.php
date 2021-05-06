@@ -60,41 +60,6 @@
 </div>
 <div class="col col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
 
-<form action="/registerread" method="post">
-{{  csrf_field()  }}
-<table class="table table-borderless">
-<br><br>
-<h3><center><b>Register User</h3>
-<tr>
-  <td>Username</td>
-  <td><input name="username" type="text" class="form-control"></td>
-</tr>
-<tr>
-  <td>Name</td>
-  <td><input name="name" type="text" class="form-control"></td>
-</tr>
-<tr>
-  <td>Email</td>
-  <td><input name="email" type="text" class="form-control" placeholder="name@example.com"></td>
-</tr>
-<tr>
-  <td>Mobile</td>
-  <td><input name="mobile" type="text" class="form-control"></td>
-</tr>
-<tr>
-  <td>Address</td>
-  <td><input name="address" type="textarea" class="form-control"></td>
-</tr>
-<tr>
-  <td>Password</td>
-  <td><input name="password" type="password" class="form-control" placeholder="Password"></td>
-</tr>
-<tr>
-  <td></td>
-  <td><button class="btn btn-success">Sign up</button></td>
-</tr>
-</table>
-</form>
 </div>
 </div>
 </div>

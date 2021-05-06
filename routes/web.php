@@ -19,17 +19,10 @@ use App\Http\Controllers\MainController;
 |
 */
 
-route::get('/',[HomeController::class,'create']);
-route::get('/aboutus',[AboutusController::class,'create']);
-route::get('/contactus',[ContactusController::class,'create']);
-route::post('/mobileread',[MobileController::class,'store']);
-route::get('/mobile',[MobileController::class,'create']);
-route::get('/laptop',[LaptopController::class,'create']);
-route::post('/laptopread',[LaptopController::class,'store']);
-route::post('/registerread',[HomeController::class,'store']);
-route::get('/viewallmobiles',[MobileController::class,'index']);
-route::get('/youraccount',[YouraccountController::class,'create']);
-route::post('/youraccountread',[YouraccountController::class,'store']);
+//route::get('/home',[HomeController::class,'create']);
+
+//route::get('/youraccount',[YouraccountController::class,'create']);
+//route::post('/youraccountread',[YouraccountController::class,'store']);
 //route::view('/login',"login");
 //route::post('/loginread',"HomeController@loginread");
 
@@ -38,9 +31,19 @@ route::post('/auth/check',[MainController::class,'check'])->name('auth.check');
 
 route::get('/auth/logout',[MainController::class,'logout'])->name('auth.logout');
 
+route::get('/',[MainController::class,'login'])->name('auth.login');
 
 route::group(['middleware'=>['AuthCheck']],function(){
-    route::get('/admin/dashboard',[MainController::class,'dashboard']);
-    route::get('/auth/login',[MainController::class,'login'])->name('auth.login');
+    route::get('/home',[HomeController::class,'create'])->name('home');
+    route::get('/admin/youraccount',[MainController::class,'youraccount']);
     route::get('/auth/register',[MainController::class,'register'])->name('auth.register');
+
+    route::get('/aboutus',[AboutusController::class,'create']);
+route::get('/contactus',[ContactusController::class,'create']);
+route::post('/mobileread',[MobileController::class,'store']);
+route::get('/mobile',[MobileController::class,'create']);
+route::get('/laptop',[LaptopController::class,'create']);
+route::post('/laptopread',[LaptopController::class,'store']);
+route::post('/registerread',[HomeController::class,'store']);
+route::get('/viewallmobiles',[MobileController::class,'index']);
 });
