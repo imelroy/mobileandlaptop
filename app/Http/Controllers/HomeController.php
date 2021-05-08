@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\HomeModel;
 use Illuminate\Support\Facades\DB;
+use App\Models\Laptop;
 class HomeController extends Controller
 {
     /**
@@ -14,18 +15,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //
+       
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('home');
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -35,13 +27,13 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        $Username= $request->input('username');  
-        $Name= $request->input('name');
-        $Email= $request->input('email');
-        $Mobile= $request->input('mobile');
-        $Address= $request->input('address');
-        $Password= $request->input('password');
-        echo DB::insert('insert into home_models(username,name,email,mobile,address,password) values(?,?,?,?,?,?)',[$Username,$Name,$Email,$Mobile,$Address,$Password]);
+        // $Username= $request->input('username');  
+        // $Name= $request->input('name');
+        // $Email= $request->input('email');
+        // $Mobile= $request->input('mobile');
+        // $Address= $request->input('address');
+        // $Password= $request->input('password');
+        // echo DB::insert('insert into home_models(username,name,email,mobile,address,password) values(?,?,?,?,?,?)',[$Username,$Name,$Email,$Mobile,$Address,$Password]);
 
         // $getUsername= request('username'); 
         // $getName= request('name');

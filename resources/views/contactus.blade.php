@@ -24,4 +24,5 @@ Kerala, India.<br><br>
  Contact: +91 - 484 - 2660555 / 2660609<br>
 +91 484 - 2426578</h5></p>
 </div>
+<table class="contact-table"></table>
 @endsection

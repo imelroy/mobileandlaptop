@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateYouraccountModelsTable extends Migration
+class CreateMobilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,15 @@ class CreateYouraccountModelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('youraccount_models', function (Blueprint $table) {
+        Schema::create('mobiles', function (Blueprint $table) {
             $table->id();
-            $table->string("name");  
-            $table->string("email");  
-            $table->string("mobile");  
-            $table->string("address"); 
+            $table->string("Model");
+            $table->string("Memory");
+            $table->string("Display");
+            $table->string("Camera");
+            $table->string("Features");
+            $table->string("Price");
+            $table->string("Gallery");
             $table->timestamps();
         });
     }
@@ -30,6 +33,6 @@ class CreateYouraccountModelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('youraccount_models');
+        Schema::dropIfExists('mobiles');
     }
 }

@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\YouraccountModel;
+use App\Models\Laptop;
 
-class YouraccountController extends Controller
+use Session;
+use Illuminate\Support\Facades\DB;
+class DisplaptopController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +16,13 @@ class YouraccountController extends Controller
      */
     public function index()
     {
-        //
+        $data= Laptop::all();
+        return view('laptop',['laptops'=>$data]);
+    }
+    function detail($id)
+    {
+        $data =Laptop::find($id);
+        return view('detail',['laptop'=>$data]);
     }
 
     /**
@@ -24,7 +32,7 @@ class YouraccountController extends Controller
      */
     public function create()
     {
-        return view('youraccount');
+        //
     }
 
     /**
@@ -35,27 +43,7 @@ class YouraccountController extends Controller
      */
     public function store(Request $request)
     {
-        $getName= request('name'); 
-        $getEmail= request('email');
-        $getMobile= request('mobile');
-        $getAddress= request('address');
-        
-        
-        echo $getName;
-        echo "<br>";
-        echo $getEmail;
-        echo "<br>";
-        echo $getMobile;
-        echo "<br>";
-        echo $getAddress;
-        echo "<br>";
-        
-        $youraccount=new YouraccountModel();
-
-        $youraccount->name=$getName;
-        $youraccount->email=$getEmail;
-        $youraccount->mobile=$getMobile;
-        $youraccount->address=$getAddress;
+        //
     }
 
     /**

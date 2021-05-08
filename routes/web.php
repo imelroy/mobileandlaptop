@@ -6,6 +6,8 @@ use App\Http\Controllers\AboutusController;
 use App\Http\Controllers\ContactusController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LaptopController;
+use App\Http\Controllers\DispmobileController;
+use App\Http\Controllers\DisplaptopController;
 use App\Http\Controllers\YouraccountController;
 use App\Http\Controllers\MainController;
 /*
@@ -34,16 +36,18 @@ route::get('/auth/logout',[MainController::class,'logout'])->name('auth.logout')
 route::get('/',[MainController::class,'login'])->name('auth.login');
 
 route::group(['middleware'=>['AuthCheck']],function(){
-    route::get('/home',[HomeController::class,'create'])->name('home');
+    route::get('/home',[MobileController::class,'index']);
     route::get('/admin/youraccount',[MainController::class,'youraccount']);
     route::get('/auth/register',[MainController::class,'register'])->name('auth.register');
-
+    Route::get("detail/{id}",[MobileController::class,'detail']);
     route::get('/aboutus',[AboutusController::class,'create']);
 route::get('/contactus',[ContactusController::class,'create']);
-route::post('/mobileread',[MobileController::class,'store']);
-route::get('/mobile',[MobileController::class,'create']);
-route::get('/laptop',[LaptopController::class,'create']);
-route::post('/laptopread',[LaptopController::class,'store']);
-route::post('/registerread',[HomeController::class,'store']);
-route::get('/viewallmobiles',[MobileController::class,'index']);
+route::get('/mobile',[DispmobileController::class,'index']);
+route::get('/laptop',[DisplaptopController::class,'index']);
+//route::post('/mobileread',[MobileController::class,'store']);
+// route::get('/mobile',[MobileController::class,'create']);
+// route::get('/laptop',[LaptopController::class,'create']);
+// route::post('/laptopread',[LaptopController::class,'store']);
+// route::post('/registerread',[HomeController::class,'store']);
+// route::get('/viewallmobiles',[MobileController::class,'index']);
 });

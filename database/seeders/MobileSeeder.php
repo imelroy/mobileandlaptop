@@ -14,24 +14,33 @@ class MobileSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('mobile')->insert([
-            'Model'=>'Samsung S20 Ultra',
+        DB::table('mobiles')->insert([
+        [    'Model'=>'Samsung S20 Ultra',
             'Memory'=>"12GB RAM 128GB",
             'Display'=>"6.90-inch",
             'Camera'=>"108MP + 48MP + 12MP + Depth,40 MP selfie",
             'Features'=>"Fingerprint, accelerometer, gyro, proximity, compass, barometer",
             'Price'=>"79,900",
-            'gallery'=>"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.samsung.com%2Fus%2Fbusiness%2Fproducts%2Fmobile%2Fphones%2Fgalaxy-s%2Fgalaxy-s20-ultra-5g-512gb-unlocked-sm-g988uzkexaa%2F&psig=AOvVaw098Su2OQa2AsF5GIzMexys&ust=1620407021152000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOC95IPFtfACFQAAAAAdAAAAABAD"
+            'Gallery'=>"https://images-na.ssl-images-amazon.com/images/I/71m0GWmMSuL._AC_SL1500_.jpg"
         ],
         [
             'Model'=>'iPhone 11',
-            'Memory'=>", 256GB 4GB RAM",
+            'Memory'=>"4GB RAM 256GB ",
             'Display'=>"6.1-inch",
             'Camera'=>"12 MP (wide), 1/2.55, 12 MP(ultrawide), 12 MP selfie",
             'Features'=>"Face ID, accelerometer, gyro, proximity, compass, barometer ",
             'Price'=>"69,900",
-            'gallery'=>"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.apple.com%2Fshop%2Fbuy-iphone%2Fiphone-11%2F6.1-inch-display-64gb-red-unlocked&psig=AOvVaw1EMfHTv5dl3dFL81YbSY0N&ust=1620448643488000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCICHr-DftvACFQAAAAAdAAAAABAZ"
+            'Gallery'=>"https://images-na.ssl-images-amazon.com/images/I/71i2XhHU3pL._AC_SX522_.jpg"
+        ],
+        [
+            'Model'=>'Oneplus 9 Pro',
+            'Memory'=>"8GB RAM 128GB ",
+            'Display'=>"6.70-inch",
+            'Camera'=>"48MP + 50MP + 8MP, 16 MP selfie",
+            'Features'=>"In-Display Fingerprint, Compass, Proximity sensor, Accelerometer, light sensor, Gyroscope",
+            'Price'=>"65,900",
+            'Gallery'=>"https://www.gizmochina.com/wp-content/uploads/2020/12/oneplus_5011101665_9_pro_128gb_5g_1629057-500x500.jpg"
         ]
-    ); 
+        ]); 
     }
 }
