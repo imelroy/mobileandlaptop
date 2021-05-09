@@ -39,11 +39,11 @@ route::group(['middleware'=>['AuthCheck']],function(){
     route::get('/home',[MobileController::class,'index']);
     route::get('/admin/youraccount',[MainController::class,'youraccount']);
     route::get('/auth/register',[MainController::class,'register'])->name('auth.register');
-    Route::get("detail/{id}",[MobileController::class,'detail']);
     route::get('/aboutus',[AboutusController::class,'create']);
-route::get('/contactus',[ContactusController::class,'create']);
-route::get('/mobile',[DispmobileController::class,'index']);
-route::get('/laptop',[DisplaptopController::class,'index']);
+    route::get('/contactus',[ContactusController::class,'create']);
+    route::get('/mobile',[DispmobileController::class,'index']);
+    route::get('/laptop',[DisplaptopController::class,'index']);
+    Route::get("mobiledetail/{id}",[MobileController::class,'mobiledetail']);
 //route::post('/mobileread',[MobileController::class,'store']);
 // route::get('/mobile',[MobileController::class,'create']);
 // route::get('/laptop',[LaptopController::class,'create']);

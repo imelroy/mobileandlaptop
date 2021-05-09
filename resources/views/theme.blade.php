@@ -34,14 +34,14 @@
         height: 200px;
     }
     .trening-item{
-        float: right;
+        float: left;
         width: 30%;
     }
     .trending-wrapper{
         margin: 30px;
     }
-    .detail-img{
-        height: 200px;
+    .mobiledetail-img{
+        height: 500px;
     }
     .search-box{
         width: 500px !important

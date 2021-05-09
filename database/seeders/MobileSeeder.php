@@ -21,7 +21,7 @@ class MobileSeeder extends Seeder
             'Camera'=>"108MP + 48MP + 12MP + Depth,40 MP selfie",
             'Features'=>"Fingerprint, accelerometer, gyro, proximity, compass, barometer",
             'Price'=>"79,900",
-            'Gallery'=>"https://images-na.ssl-images-amazon.com/images/I/71m0GWmMSuL._AC_SL1500_.jpg"
+            'Gallery'=>"https://ww.etoren.com/upload/images/0.19016700_1581586372_samsung-galaxy-s20-ultra-5g-dual-sim-g988fd-128gb-black-12gb-ram.png"
         ],
         [
             'Model'=>'iPhone 11',

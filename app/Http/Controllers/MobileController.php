@@ -19,10 +19,11 @@ class MobileController extends Controller
         $data= Mobile::all();
         return view('home',['mobiles'=>$data]);
     }
-    function detail($id)
+    function mobiledetail($id)
     {
-        $data =Mobile::find($id);
-        return view('detail',['home'=>$data]);
+         $data= Mobile::find($id);
+         return view('mobiledetail',['home'=>$data]);
+        
     }
 
     
