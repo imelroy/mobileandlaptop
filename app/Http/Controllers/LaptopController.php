@@ -19,16 +19,24 @@ class LaptopController extends Controller
         $data= Laptop::all();
         return view('home',['laptops'=>$data]);
     }
-    function detail($id)
+    function laptopdropview($id)
     {
-        $data =Laptop::find($id);
-        return view('detail',['home'=>$data]);
+         $data= Laptop::find($id);
+         return view('laptopdropview',['laptop'=>$data]);
+        
+    }
+    function searchlaptop(Request $req)
+    {
+       $data= Laptop::where('Model', 'like', '%'.$req->input('query').'%')
+       ->get();
+
+        return view('searchlaptop',['laptops'=>$data]);
     }
 
 
-    public function create()
-     {
-         return view('laptop');
-     }
+    // public function create()
+    //  {
+    //      return view('laptop');
+    //  }
 }
    

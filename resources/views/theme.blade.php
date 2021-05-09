@@ -43,6 +43,9 @@
     .mobiledetail-img{
         height: 500px;
     }
+    .laptopdropview-img{
+        height: 400px;
+    }
     .search-box{
         width: 500px !important
     }

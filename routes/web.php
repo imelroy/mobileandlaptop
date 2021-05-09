@@ -44,6 +44,12 @@ route::group(['middleware'=>['AuthCheck']],function(){
     route::get('/mobile',[DispmobileController::class,'index']);
     route::get('/laptop',[DisplaptopController::class,'index']);
     Route::get("mobiledetail/{id}",[MobileController::class,'mobiledetail']);
+    Route::get("mobiledropview/{id}",[MobileController::class,'mobiledropview']);
+    Route::get("laptopdropview/{id}",[LaptopController::class,'laptopdropview']);
+    //Route::get("search",[LaptopController::class,'search']);
+    Route::get("search",[MobileController::class,'search']);
+    Route::get("searchlaptop",[LaptopController::class,'searchlaptop']);
+    Route::post("add_to_cart",[MobileController::class,'addToCart']);
 //route::post('/mobileread',[MobileController::class,'store']);
 // route::get('/mobile',[MobileController::class,'create']);
 // route::get('/laptop',[LaptopController::class,'create']);

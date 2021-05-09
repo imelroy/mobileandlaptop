@@ -13,7 +13,7 @@
     <div class="col col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3"></div>
     <br> <br> <br>
     <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-    <h4><center><b>Login</h4>
+    <h4><center>Login</h4>
     <form action="{{ route('auth.check') }}" method="post">
     @if(Session::get('fail'))
     <div class="alert alert-danger">
