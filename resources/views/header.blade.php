@@ -1,3 +1,12 @@
+<?php 
+use App\Http\Controllers\MobileController;
+$total=0;
+if(Session::has('LoggedUser'))
+{
+  $total= MobileController::cartItem();
+}
+
+?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="/home">Mobile & Laptop</a>
@@ -29,7 +38,7 @@
         <ul class="navbar-nav  mb-2 mb-lg-xl-xxl-0 navbar-right">
         
         <li class="nav-item">
-          <a class="nav-link" href="#">Cart</a>
+          <a class="nav-link" href="/cartlist">cart({{$total}})</a>
         </li>
         
       <form action="/search" && "/searchlaptop" class="navbar-form navbar-left">

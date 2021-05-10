@@ -54,6 +54,12 @@ class MobileController extends Controller
             return redirect('/');
         }
     }
+
+    static function cartItem()
+    {
+     $userId=Session::get('id',session('LoggedUser'));
+     return Cart::where('user_id',$userId)->count();
+    }
     
     // /**
     //  * Show the form for creating a new resource.
