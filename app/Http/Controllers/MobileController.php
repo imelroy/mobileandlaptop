@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Mobile;
 use App\Models\Cart;
 
-use Session;
+use session;
 use Illuminate\Support\Facades\DB;
 class MobileController extends Controller
 {
@@ -41,16 +41,13 @@ class MobileController extends Controller
     }
     function addToCart(Request $req)
     {
-        
         if($req->session()->has('LoggedUser'))
         {
-        
            $cart= new Cart;
-           $cart->user_id=$req->session()->get('LoggedUser')['id'];
+           $cart->user_id=$req->session()->get('id',session('LoggedUser'));
            $cart->product_id=$req->product_id;
            $cart->save();
            return redirect('/home');
-
         }
         else
         {
