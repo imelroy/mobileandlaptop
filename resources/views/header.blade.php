@@ -41,7 +41,7 @@ if(Session::has('LoggedUser'))
           <a class="nav-link" href="/cartlist">cart({{$total}})</a>
         </li>
         
-      <form action="/search" && "/searchlaptop" class="navbar-form navbar-left">
+      <form action="/search" && "/searchlaptop" class="navbar-form navbar-right">
           <div class="form-group">
             <input type="text" name="query" class="form-control search-box" placeholder="Search">
           </div>

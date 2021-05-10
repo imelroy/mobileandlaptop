@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Mobile;
 use App\Models\Cart;
 
-use session;
+use Session;
 use Illuminate\Support\Facades\DB;
 class MobileController extends Controller
 {
@@ -59,6 +59,19 @@ class MobileController extends Controller
     {
      $userId=Session::get('id',session('LoggedUser'));
      return Cart::where('user_id',$userId)->count();
+    }
+
+    function cartList()
+    {
+        
+        $userId=Session::get('id',session('LoggedUser'));
+        $mobiles= DB::table('cart')
+        ->join('mobiles','cart.product_id','=','mobiles.id')
+        ->where('cart.user_id',$userId)
+        ->select('mobiles.*','cart.id as cart_id')
+        ->get();
+
+        return view('cartlist',['mobiles'=>$mobiles]);
     }
     
     // /**

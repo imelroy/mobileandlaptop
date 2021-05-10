@@ -50,6 +50,7 @@ route::group(['middleware'=>['AuthCheck']],function(){
     Route::get("search",[MobileController::class,'search']);
     Route::get("searchlaptop",[LaptopController::class,'searchlaptop']);
     Route::post("add_to_cart",[MobileController::class,'addToCart']);
+    Route::get("cartlist",[MobileController::class,'cartList']); 
 //route::post('/mobileread',[MobileController::class,'store']);
 // route::get('/mobile',[MobileController::class,'create']);
 // route::get('/laptop',[LaptopController::class,'create']);

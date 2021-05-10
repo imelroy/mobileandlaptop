@@ -47,7 +47,7 @@
         height: 400px;
     }
     .search-box{
-        width: 500px !important
+        width: 300px !important
     }
     .cart-list-devider{
         border-bottom: 1px solid #ccc;
@@ -62,6 +62,14 @@
     }
     .aboutus-table{
         height: 70px
+    }
+    .button{
+        margin-left: 705px;
+        width: 140px
+    }
+    .sobutton{
+        margin-left: 735px;
+        width: 140px
     }
 </style>
 </html>
