@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Mobile;
 use App\Models\Cart;
+use App\Models\Order;
 
 use Session;
 use Illuminate\Support\Facades\DB;
@@ -73,7 +74,42 @@ class MobileController extends Controller
 
         return view('cartlist',['mobiles'=>$mobiles]);
     }
+    function removeCart($id)
+    {
+        Cart::destroy($id);
+        return redirect('cartlist');
+    }
     
+    function orderNow()
+    {
+        $userId=Session::get('id',session('LoggedUser'));
+         $mtotal= $mobiles= DB::table('cart')
+        ->join('mobiles','cart.product_id','=','mobiles.id')
+        ->where('cart.user_id',$userId)
+        ->sum('mobiles.Price');
+
+         return view('ordernow',['total'=>$mtotal]);
+    }
+   
+    function orderPlace(Request $req)
+    {
+        $userId=Session::get('id',session('LoggedUser'));
+        $allCart= Cart::where('user_id',$userId)->get();
+         foreach($allCart as $cart)
+         {
+             $order= new Order;
+             $order->product_id=$cart['product_id'];
+             $order->user_id=$cart['user_id'];
+             $order->status="Processing";
+             $order->payment_method=$req->payment;
+             $order->payment_status="Pending";
+             $order->address=$req->address;
+             $order->save();
+             Cart::where('user_id',$userId)->delete(); 
+         }
+         $req->input();
+         return redirect('/home');
+    }
     // /**
     //  * Show the form for creating a new resource.
     //  *

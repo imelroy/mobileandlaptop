@@ -6,7 +6,7 @@
 <img class="mobiledropview-img" src="{{$mobile['Gallery']}}" alt="">
 </div>
 <div class="col-sm-6">
-<a href="/home">Go Back</a>
+<a href="/mobile">Go Back</a>
        <h2><b>{{$mobile['Model']}}</h2>
        <h3>Price : {{$mobile['Price']}}</h3>
        <h4>Memory: {{$mobile['Memory']}}</h4>

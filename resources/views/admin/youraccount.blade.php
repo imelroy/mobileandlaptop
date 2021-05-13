@@ -27,7 +27,7 @@
         <td>{{ $LoggedUserInfo['email'] }}</td>
         <td>{{ $LoggedUserInfo['mobile'] }}</td>
         <td>{{ $LoggedUserInfo['address'] }}</td>
-        <td><a href="#">Edit </a></td>
+        <td><a class="btn btn-info" href="#">Edit</a></td>
     
        
     </tr>

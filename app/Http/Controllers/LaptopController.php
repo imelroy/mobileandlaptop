@@ -33,6 +33,28 @@ class LaptopController extends Controller
         return view('searchlaptop',['laptops'=>$data]);
     }
 
+    function orderNow()
+    {
+        $userId=Session::get('id',session('LoggedUser'));
+         $ltotal= $laptopss= DB::table('cart')
+        ->join('laptops','cart.product_id','=','laptops.id')
+        ->where('cart.user_id',$userId)
+        ->sum('laptops.Price');
+
+         return view('ordernow',['total'=>$ltotal]);
+    }
+    // function cartList()
+    // {
+        
+    //     $userId=Session::get('id',session('LoggedUser'));
+    //     $laptops= DB::table('cart')
+    //     ->join('laptops','cart.product_id','=','laptops.id')
+    //     ->where('cart.user_id',$userId)
+    //     ->select('laptops.*','cart.id as cart_id')
+    //     ->get();
+
+    //     return view('cartlist',['laptops'=>$laptops]);
+    // }
 
     // public function create()
     //  {

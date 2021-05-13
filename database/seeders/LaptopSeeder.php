@@ -21,7 +21,7 @@ class LaptopSeeder extends Seeder
             'Platform'=>"macOS",
             'Processor'=>"Intel Core i5 8th Gen 3.9GHz",
             'Graphics'=>"Intel Integrated Iris Plus Graphics 645",
-            'Price'=>"116,790",
+            'Price'=>"116790",
             'Gallery'=>"https://www.notebookcheck.net/uploads/tx_nbc2/Bildschirmfoto_2020-05-22_um_12.01.27.png"
         ],
         [
@@ -31,7 +31,7 @@ class LaptopSeeder extends Seeder
             'Platform'=>"Windows 10 Home",
             'Processor'=>"Intel Core i7 processor-10th Gen",
             'Graphics'=>"Nvidia GeForce RTX 3060",
-            'Price'=>"109,990",
+            'Price'=>"109990",
             'Gallery'=>"https://static.acer.com/up/Resource/Acer/Laptops/Predator_Helios_300/Images/20200707/Predator-Helios-300_PH317-54_modelpreview.png"
         ],
         [
@@ -41,7 +41,7 @@ class LaptopSeeder extends Seeder
             'Platform'=>"Windows 10 Home",
             'Processor'=>"Intel Core i9 processor-10th Gen",
             'Graphics'=>"Nvidia GeForce RTX 2080 super",
-            'Price'=>"250,000",
+            'Price'=>"250000",
             'Gallery'=>"https://gameprosg.com/wp-content/uploads/2019/08/product_7_20190521134135_5ce38f8f57d72.png"
         ]
         ]); 

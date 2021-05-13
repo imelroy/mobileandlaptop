@@ -27,6 +27,12 @@ use App\Http\Controllers\MainController;
 //route::post('/youraccountread',[YouraccountController::class,'store']);
 //route::view('/login',"login");
 //route::post('/loginread',"HomeController@loginread");
+//route::post('/mobileread',[MobileController::class,'store']);
+// route::get('/mobile',[MobileController::class,'create']);
+// route::get('/laptop',[LaptopController::class,'create']);
+// route::post('/laptopread',[LaptopController::class,'store']);
+// route::post('/registerread',[HomeController::class,'store']);
+// route::get('/viewallmobiles',[MobileController::class,'index']);
 
 route::post('/auth/save',[MainController::class,'save'])->name('auth.save');
 route::post('/auth/check',[MainController::class,'check'])->name('auth.check');
@@ -46,15 +52,15 @@ route::group(['middleware'=>['AuthCheck']],function(){
     Route::get("mobiledetail/{id}",[MobileController::class,'mobiledetail']);
     Route::get("mobiledropview/{id}",[MobileController::class,'mobiledropview']);
     Route::get("laptopdropview/{id}",[LaptopController::class,'laptopdropview']);
-    //Route::get("search",[LaptopController::class,'search']);
     Route::get("search",[MobileController::class,'search']);
     Route::get("searchlaptop",[LaptopController::class,'searchlaptop']);
     Route::post("add_to_cart",[MobileController::class,'addToCart']);
+   // Route::post("add_to_cart",[LaptopController::class,'addToCart']);
     Route::get("cartlist",[MobileController::class,'cartList']); 
-//route::post('/mobileread',[MobileController::class,'store']);
-// route::get('/mobile',[MobileController::class,'create']);
-// route::get('/laptop',[LaptopController::class,'create']);
-// route::post('/laptopread',[LaptopController::class,'store']);
-// route::post('/registerread',[HomeController::class,'store']);
-// route::get('/viewallmobiles',[MobileController::class,'index']);
+   // Route::get("cartlist",[LaptopController::class,'cartList']);
+    Route::get("removecart/{id}",[MobileController::class,'removeCart']); 
+    Route::get("ordernow",[MobileController::class,'orderNow']); 
+   // Route::get("ordernow",[LaptopController::class,'orderNow']); 
+    Route::post("orderplace",[MobileController::class,'orderPlace']);
+
 });

@@ -16,6 +16,7 @@
                     <div class="">
                       <h2>{{$item->Model}}</h2>
                       <h5>{{$item->Memory}}</h5>
+                      <h5>Price : {{$item->Price}}</h5>
                     </div>
              </div>
              <div class="col-sm-3">
@@ -28,4 +29,6 @@
 
      </div>
 </div>
+
 @endsection 
+

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Admin;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
+
 class MainController extends Controller
 {
    function login() {
@@ -24,7 +25,7 @@ class MainController extends Controller
             'address'=>'required',
             'password'=>'required|min:5|max:15'
         ]);
-        //insertion into  database
+        //insertion into  database 
             $admin =new Admin;
             $admin->username= $request->username;
             $admin->name= $request->name;

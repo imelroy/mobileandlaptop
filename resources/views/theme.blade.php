@@ -71,5 +71,16 @@
         margin-left: 735px;
         width: 140px
     }
+    .custom-product{
+        margin: 50px;
+    }
+    .orderbtn{
+        margin-left: 640px;
+        width: 130px
+    }
+    .order-list{
+        height: 492px
+    }
+    
 </style>
 </html>
