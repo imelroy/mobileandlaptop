@@ -53,7 +53,7 @@ if(Session::has('LoggedUser'))
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="/admin/youraccount">Your Account</a></li>
-            <li><a class="dropdown-item" href="#">Orders</a></li>
+            <li><a class="dropdown-item" href="/myorders">Orders</a></li>
             <li><a class="dropdown-item" href="{{ route('auth.logout') }}">Sign out</a></li>
           </ul>
         </li>

@@ -1,12 +1,15 @@
 @extends("theme")
 @section("content")
 <div class="custom-mobile">
-     <div class="col-sm-10">
+    <div class=" row searched-item cart-list-devider"> 
+    <div class="col-sm-10">
         <div class="trending-wrapper">
             <h1>Cart Products</h1>
-            <a class="btn btn-success button" href="ordernow">Order Now</a> <br> <br>
+            
+            <a class="btn btn-success button" href="ordernow">Order Now</a>
+            <a href="/home">Go Back</a> <br> <br>
             @foreach($mobiles as $item)
-            <div class=" row searched-item cart-list-devider">
+            
              <div class="col-sm-3">
                 <a href="mobiledetail/{{$item->id}}">
                     <img class="trending-image" src="{{$item->Gallery}}">
@@ -28,6 +31,7 @@
           <a class="btn btn-success sobutton" href="ordernow">Order Now</a> <br> <br>
 
      </div>
+     
 </div>
 
 @endsection 

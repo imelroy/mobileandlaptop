@@ -87,8 +87,12 @@ class MobileController extends Controller
         ->join('mobiles','cart.product_id','=','mobiles.id')
         ->where('cart.user_id',$userId)
         ->sum('mobiles.Price');
+        $ltotal= $laptopss= DB::table('cart')
+        ->join('laptops','cart.product_id','=','laptops.id')
+        ->where('cart.user_id',$userId)
+        ->sum('laptops.Price');
 
-         return view('ordernow',['total'=>$mtotal]);
+         return view('ordernow',['total'=>$mtotal+$ltotal]);
     }
    
     function orderPlace(Request $req)
@@ -109,6 +113,21 @@ class MobileController extends Controller
          }
          $req->input();
          return redirect('/home');
+    }
+
+    function myOrders()
+    {
+        $userId=Session::get('id',session('LoggedUser'));
+        $morders= DB::table('orders')
+         ->join('mobiles','orders.product_id','=','mobiles.id')
+         ->where('orders.user_id',$userId)
+         ->get();
+         $lorders= DB::table('orders')
+         ->join('laptops','orders.product_id','=','laptops.id')
+         ->where('orders.user_id',$userId)
+         ->get();
+         return view('myorders',['orders'=>$morders,$lorders]);
+        // return view('myorders',['orders'=>$lorders]);
     }
     // /**
     //  * Show the form for creating a new resource.

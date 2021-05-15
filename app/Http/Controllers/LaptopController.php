@@ -33,16 +33,29 @@ class LaptopController extends Controller
         return view('searchlaptop',['laptops'=>$data]);
     }
 
-    function orderNow()
+    function cartList()
     {
+        
         $userId=Session::get('id',session('LoggedUser'));
-         $ltotal= $laptopss= DB::table('cart')
+        $laptops= DB::table('cart')
         ->join('laptops','cart.product_id','=','laptops.id')
         ->where('cart.user_id',$userId)
-        ->sum('laptops.Price');
+        ->select('laptops.*','cart.id as cart_id')
+        ->get();
 
-         return view('ordernow',['total'=>$ltotal]);
+        return view('cartlist',['laptops'=>$laptops]);
     }
+
+    // function orderNow()
+    // {
+    //     $userId=Session::get('id',session('LoggedUser'));
+    //      $ltotal= $laptopss= DB::table('cart')
+    //     ->join('laptops','cart.product_id','=','laptops.id')
+    //     ->where('cart.user_id',$userId)
+    //     ->sum('laptops.Price');
+
+    //     return view('ordernow',['ltotal'=>$ltotal]);
+    // }
     // function cartList()
     // {
         
@@ -55,6 +68,17 @@ class LaptopController extends Controller
 
     //     return view('cartlist',['laptops'=>$laptops]);
     // }
+
+    function lmyOrders()
+    {
+        $userId=Session::get('id',session('LoggedUser'));
+       return $orders= DB::table('orders')
+         ->join('laptops','orders.product_id','=','laptops.id')
+         ->where('orders.user_id',$userId)
+         ->get();
+ 
+        // return view('myorders',['orders'=>$orders]);
+    }
 
     // public function create()
     //  {
