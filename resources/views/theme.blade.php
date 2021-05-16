@@ -33,6 +33,7 @@
     .trending-image{
         height: 200px;
     }
+    
     .trening-item{
         float: left;
         width: 30%;
@@ -75,7 +76,7 @@
         width: 140px
     }
     .custom-product{
-        margin: 50px;
+        height: 600px
     }
     .orderbtn{
         margin-left: 640px;
@@ -84,6 +85,37 @@
     .order-list{
         height: 492px
     }
+    .cart-image{
+        height: 200px;
+        margin: 30px;
+        float: down;
+       
+    }
+    .order-details{
+        height: 200px;
+        margin: 30px;
+    }
+    .custom-productt{
+        height: 600px
+       
+    }
+    .trending-imagee{
+        height: 200px;
+        margin: 10px;
+    }
     
+    
+    .trending-wrapperr{
+        margin: 50px;
+    }
+    .cart-list-deviderr{
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 20px;
+        padding-bottom: 20px
+    }
+    .remove{
+        margin: 50px;
+        padding-bottom: 100px
+    }
 </style>
 </html>

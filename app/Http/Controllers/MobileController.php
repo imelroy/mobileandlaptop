@@ -72,7 +72,14 @@ class MobileController extends Controller
         ->select('mobiles.*','cart.id as cart_id')
         ->get();
 
-        return view('cartlist',['mobiles'=>$mobiles]);
+        $laptops= DB::table('cart')
+        ->join('laptops','cart.product_id','=','laptops.id')
+        ->where('cart.user_id',$userId)
+        ->select('laptops.*','cart.id as cart_id')
+        ->get();
+
+       // return view('cartlist',['laptops'=>$laptops]);
+        return view('cartlist',['mobiles'=>$mobiles],['laptops'=>$laptops]);
     }
     function removeCart($id)
     {
@@ -122,12 +129,12 @@ class MobileController extends Controller
          ->join('mobiles','orders.product_id','=','mobiles.id')
          ->where('orders.user_id',$userId)
          ->get();
-         $lorders= DB::table('orders')
+        $lorders= DB::table('orders')
          ->join('laptops','orders.product_id','=','laptops.id')
          ->where('orders.user_id',$userId)
          ->get();
-         return view('myorders',['orders'=>$morders,$lorders]);
-        // return view('myorders',['orders'=>$lorders]);
+         return view('myorders',['morders'=>$morders],['lorders'=>$lorders]);
+       
     }
     // /**
     //  * Show the form for creating a new resource.
