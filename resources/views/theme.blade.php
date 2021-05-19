@@ -117,5 +117,9 @@
         margin: 50px;
         padding-bottom: 100px
     }
+    .custom-mobile{
+        margin: 50px;
+    }
+    
 </style>
 </html>

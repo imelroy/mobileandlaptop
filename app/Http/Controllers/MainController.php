@@ -72,6 +72,21 @@ class MainController extends Controller
         $data=['LoggedUserInfo'=>Admin::where('id','=',session('LoggedUser'))->first()];
         return view('admin.youraccount',$data);
     }
+
+    // function edit($id)
+    // {
+    
+    //     $row =DB::table('admins')
+    //     ->where('id',$id)
+    //     ->first();
+    //     $data = [
+    //         'LoggedUserInfo'=>$row
+    //         'Title'=>'Edit'
+    //     ];
+    //     return view('admin.edit',$data);
+    // }
+
+
 }
  
 

@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Edit</title>
 </head>
 <body>
     <div class="register">
@@ -13,7 +13,7 @@
     <div class="col col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4"></div>
     <br> <br> <br>
     <div class="col col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
-    <h2><center>REGISTER</h2>
+    <h2>{{$Title}}</h2>
     <form action="{{ route('auth.save') }}" method="post">
     @if(Session::get('Success'))
     <div class="alert alert-success">
@@ -60,14 +60,14 @@
     <tr>
         <td>
         <center>
-        <button type="submit" class="btn btn-block btn-primary register-page">Create account</button>
+        <button type="submit" class="btn btn-block btn-primary register-page">Edit</button>
     </td>
     </tr>
     <br><center>
     
     <br>
 
-    <p class="izU2O ">I already have an account, <a href="{{ route('auth.login') }}" tabindex="0"><span class="_7UhW9   xLCgt       qyrsm      gtFbE      se6yk        ">Sign in</span></a></p>
+   
     </form>
     </div></div>
     </div>
@@ -80,4 +80,4 @@
 }
 </style>
 </body> 
-</html>
+</html> -->

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Mobile;
 use App\Models\Cart;
 use App\Models\Order;
-
+use App\Models\Laptop;
 use Session;
 use Illuminate\Support\Facades\DB;
 class MobileController extends Controller
@@ -19,6 +19,7 @@ class MobileController extends Controller
      function index()
     {
         $data= Mobile::all();
+        
         return view('home',['mobiles'=>$data]);
     }
     function mobiledetail($id)
@@ -38,7 +39,11 @@ class MobileController extends Controller
        $data= Mobile::where('Model', 'like', '%'.$req->input('query').'%')
        ->get();
 
-        return view('search',['mobiles'=>$data]);
+        $data= Laptop::where('Model', 'like', '%'.$req->input('query').'%')
+        ->get();
+
+       // return view('searchlaptop',['laptops'=>$data]);
+        return view('search',['mobiles'=>$data],['laptops'=>$data]);
     }
     function addToCart(Request $req)
     {
@@ -136,6 +141,8 @@ class MobileController extends Controller
          return view('myorders',['morders'=>$morders],['lorders'=>$lorders]);
        
     }
+
+    
     // /**
     //  * Show the form for creating a new resource.
     //  *
