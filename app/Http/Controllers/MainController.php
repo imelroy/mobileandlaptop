@@ -73,9 +73,65 @@ class MainController extends Controller
         return view('admin.youraccount',$data);
     }
 
+    public function edit($id)
+    {
+        $users=Admin::find($id);
+        return view('auth.edit',compact('users'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $admin=Admin::find($id);
+
+        // $request->validate([
+        //     'username'=>'required',
+        //     'name'=>'required',
+        //     'email'=>'required|email|unique:admins',
+        //     'mobile'=>'required',
+        //     'address'=>'required',
+        //     'password'=>'required|min:5|max:15'
+        // ]);
+        // //insertion into  database 
+        //     $admin =new Admin;
+        //     $admin->username= $request->username;
+        //     $admin->name= $request->name;
+        //     $admin->email= $request->email;
+        //     $admin->mobile= $request->mobile;
+        //     $admin->address= $request->address;
+        //     $admin->password=Hash::make($request->password);
+
+        //     $save = $admin->save();
+
+        $getusername= request('username');
+        $getName= request('name');
+        $getEmail= request('email');
+        $getMobile= request('mobile');
+        $getAddress= request('address');
+        $getPassword= request('password');
+      
+
+        $admin->username=$getusername;
+        $admin->name=$getName;
+        $admin->email=$getEmail;
+        $admin->mobile=$getMobile;
+        $admin->address=$getAddress;
+        $admin->password=$getPassword;
+
+        $admin->save();
+
+
+        return redirect('/admin/youraccount');
+
+    }
+
+
+
+
+
+
     // function edit($id)
     // {
-    
+    //     //$userId=Session::get('id',session('LoggedUser'));
     //     $row =DB::table('admins')
     //     ->where('id',$id)
     //     ->first();

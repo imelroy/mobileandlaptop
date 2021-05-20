@@ -19,6 +19,7 @@
     <th>Email</th>
     <th>Mobile</th>
     <th>Address</th>
+    <th>Password (encrypted)</th>
     </thead>
     <tbody>
     <tr>
@@ -27,7 +28,8 @@
         <td>{{ $LoggedUserInfo['email'] }}</td>
         <td>{{ $LoggedUserInfo['mobile'] }}</td>
         <td>{{ $LoggedUserInfo['address'] }}</td>
-        <td><a class="btn btn-info" href="/edit">Edit</a></td>
+        <td>{{ $LoggedUserInfo['password'] }}</td>
+        <td><a class="btn btn-info" href="/admin/{{$LoggedUserInfo->id}}/auth/edit">Edit</a></td>
     
        
     </tr>

@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
@@ -12,9 +12,13 @@
     <div class="row" style ="margin-top:130px">
     <div class="col col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4"></div>
     <br> <br> <br>
+    
     <div class="col col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
-    <h2>{{$Title}}</h2>
-    <form action="{{ route('auth.save') }}" method="post">
+    <h2><center>Update Account details</h2>
+    
+    <form action="/usereditprocess/{{$users->id }}" method="post">
+    {{csrf_field() }}
+
     @if(Session::get('Success'))
     <div class="alert alert-success">
     {{ Session::get('Success')}}
@@ -28,43 +32,44 @@
     @csrf
     <div class="form-group">
     <label>Username</label>
-    <input type="text" class="form-control" name="username" placeholder=" Enter the username" value="{{ old('username') }}">
+    <input value="{{$users->username }}" type="text" class="form-control" name="username" placeholder=" Enter the username" >
     <span class="text-danger">@error('username') {{ $message }} @enderror</span>
     </div>
     <div class="form-group">
     <label>Name</label>
-    <input type="text" class="form-control" name="name" placeholder=" Enter your name" value="{{ old('username') }}">
+    <input value="{{$users->name }}" type="text" class="form-control" name="name" placeholder=" Enter your name" >
     <span class="text-danger">@error('name') {{ $message }} @enderror</span>
     </div>
     <div class="form-group">
     <label>Email</label>
-    <input type="text" class="form-control" name="email" placeholder=" Enter your email" value="{{ old('email') }}">
+    <input value="{{$users->email }}" type="text" class="form-control" name="email" placeholder=" Enter your email" >
     <span class="text-danger">@error('email') {{ $message }} @enderror</span>
     </div>
     <div class="form-group">
     <label>Mobile</label>
-    <input type="text" class="form-control" name="mobile" placeholder=" Enter your mobile no" value="{{ old('mobile') }}">
+    <input value="{{$users->mobile }}" type="text" class="form-control" name="mobile" placeholder=" Enter your mobile no" >
     <span class="text-danger">@error('mobile') {{ $message }} @enderror</span>
     </div>
     <div class="form-group">
     <label>Address</label>
-    <input type="text" class="form-control" name="address" placeholder=" Enter your address" value="{{ old('address') }}">
+    <input value="{{$users->address }}" type="text" class="form-control" name="address" placeholder=" Enter your address" >
     <span class="text-danger">@error('address') {{ $message }} @enderror</span>
     </div>
     <div class="form-group">
     <label>Password</label>
-    <input type="password" class="form-control" name="password" placeholder=" Enter the password">
+    <input value="{{$users->password }}" type="password" class="form-control" name="password" placeholder=" Enter the password">
     <span class="text-danger">@error('password') {{ $message }} @enderror</span>
     </div>
     <br>
     <tr>
         <td>
         <center>
-        <button type="submit" class="btn btn-block btn-primary register-page">Edit</button>
+        <button type="submit" class="btn btn-block btn-primary register-page" >Update</button>
     </td>
     </tr>
     <br><center>
-    
+    <br>
+    <a href="/home">Go Back</a>
     <br>
 
    
@@ -80,4 +85,4 @@
 }
 </style>
 </body> 
-</html> -->
+</html>

@@ -1,9 +1,9 @@
 @extends("theme")
 @section("content")
 <br>
-<h1><b>  Mobile&Laptop Help Center | 24x7 Customer Care Support</h1>
+<h1><b><center>  Mobile&Laptop Help Center | 24x7 Customer Care Support</h1>
 <div class="container">
-<br><br><br><br><br><br>
+<br><br><br><br>
 <p><h1><center><b>Headquarters</h1></p>
 <p><h5><center>Rajagiri College of Social Sciences (Autonomous),<br>
 Rajagiri P.O,<br>

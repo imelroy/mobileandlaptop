@@ -28,15 +28,17 @@ route::post('/auth/check',[MainController::class,'check'])->name('auth.check');
 
 route::get('/auth/logout',[MainController::class,'logout'])->name('auth.logout');
 
+
+
 route::get('/',[MainController::class,'login'])->name('auth.login');
 
 route::group(['middleware'=>['AuthCheck']],function(){
     route::get('/home',[MobileController::class,'index']);
     route::get('/admin/youraccount',[MainController::class,'youraccount']);
-    
     route::get('/auth/register',[MainController::class,'register'])->name('auth.register');
     route::get('/aboutus',[AboutusController::class,'create']);
-    route::get('/edit',[MainController::class,'edit']);
+    route::get('/admin/{id}/auth/edit',[MainController::class,'edit']);
+    route::post('/usereditprocess/{id}',[MainController::class,'update']);
     route::get('/contactus',[ContactusController::class,'create']);
     route::get('/mobile',[DispmobileController::class,'index']);
     route::get('/laptop',[DisplaptopController::class,'index']);
