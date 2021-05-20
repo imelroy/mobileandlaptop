@@ -33,7 +33,7 @@
             @foreach($laptops as $item)
              <div class="col-sm-3">
                 <a href="mobiledetail/{{$item->id}}">
-                    <img class="trending-imagee" src="{{$item->Gallery}}">
+                    <img class="trending-images" src="{{$item->Gallery}}">
                   </a>
              </div>
              <div class="col-sm-4">

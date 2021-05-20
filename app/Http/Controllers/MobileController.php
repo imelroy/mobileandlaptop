@@ -36,15 +36,16 @@ class MobileController extends Controller
     }
     function search(Request $req)
     {
-       $data= Mobile::where('Model', 'like', '%'.$req->input('query').'%')
+       $mdata= Mobile::where('Model', 'like', '%'.$req->input('query').'%')
        ->get();
 
-        $data= Laptop::where('Model', 'like', '%'.$req->input('query').'%')
+        $ldata= Laptop::where('Model', 'like', '%'.$req->input('query').'%')
         ->get();
 
        // return view('searchlaptop',['laptops'=>$data]);
-        return view('search',['mobiles'=>$data],['laptops'=>$data]);
+        return view('search',['mobiles'=>$mdata],['laptops'=>$ldata]);
     }
+    
     function addToCart(Request $req)
     {
         if($req->session()->has('LoggedUser'))
@@ -83,7 +84,6 @@ class MobileController extends Controller
         ->select('laptops.*','cart.id as cart_id')
         ->get();
 
-       // return view('cartlist',['laptops'=>$laptops]);
         return view('cartlist',['mobiles'=>$mobiles],['laptops'=>$laptops]);
     }
     function removeCart($id)
@@ -138,18 +138,19 @@ class MobileController extends Controller
          ->join('laptops','orders.product_id','=','laptops.id')
          ->where('orders.user_id',$userId)
          ->get();
+         
          return view('myorders',['morders'=>$morders],['lorders'=>$lorders]);
-       
-    }
 
+
+        
+    }
     
-    // /**
-    //  * Show the form for creating a new resource.
-    //  *
-    //  * @return \Illuminate\Http\Response
-    //  */
-    //  public function create()
-    //  {
-    //      return view('mobile');
-    //  }
+    function cancelOrder($id)
+    {
+        Order::destroy($id);
+        
+        return redirect('myorders');
+    }
+    
+   
 }

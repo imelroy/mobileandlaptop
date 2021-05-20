@@ -83,25 +83,6 @@ class MainController extends Controller
     {
         $admin=Admin::find($id);
 
-        // $request->validate([
-        //     'username'=>'required',
-        //     'name'=>'required',
-        //     'email'=>'required|email|unique:admins',
-        //     'mobile'=>'required',
-        //     'address'=>'required',
-        //     'password'=>'required|min:5|max:15'
-        // ]);
-        // //insertion into  database 
-        //     $admin =new Admin;
-        //     $admin->username= $request->username;
-        //     $admin->name= $request->name;
-        //     $admin->email= $request->email;
-        //     $admin->mobile= $request->mobile;
-        //     $admin->address= $request->address;
-        //     $admin->password=Hash::make($request->password);
-
-        //     $save = $admin->save();
-
         $getusername= request('username');
         $getName= request('name');
         $getEmail= request('email');
@@ -119,7 +100,6 @@ class MainController extends Controller
 
         $admin->save();
 
-
         return redirect('/admin/youraccount');
 
     }
@@ -129,18 +109,7 @@ class MainController extends Controller
 
 
 
-    // function edit($id)
-    // {
-    //     //$userId=Session::get('id',session('LoggedUser'));
-    //     $row =DB::table('admins')
-    //     ->where('id',$id)
-    //     ->first();
-    //     $data = [
-    //         'LoggedUserInfo'=>$row
-    //         'Title'=>'Edit'
-    //     ];
-    //     return view('admin.edit',$data);
-    // }
+    
 
 
 }

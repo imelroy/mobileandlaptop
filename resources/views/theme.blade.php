@@ -75,6 +75,9 @@
         margin-left: 735px;
         width: 140px
     }
+    .order-cancel{
+        width: 140px
+    }
     .custom-product{
         height: 600px
     }
@@ -103,7 +106,10 @@
         height: 200px;
         margin: 10px;
     }
-    
+    .trending-images{
+        height: 180px;
+        margin: 10px;
+    }
     
     .trending-wrapperr{
         margin: 50px;
