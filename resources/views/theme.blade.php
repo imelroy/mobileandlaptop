@@ -22,13 +22,14 @@
 </body> 
 <style>
     img.slider-img{
-        height: 400px !important
+        height: 500px !important
     }
     .custom-mobiles{
         height: 1300px
     }
     .slider-text-dark{
-        background-color: #35443585 !important;
+        background-color: #35412766 !important;
+    
     }
     .trending-image{
         height: 200px;
@@ -36,7 +37,7 @@
     
     .trening-item{
         float: left;
-        width: 30%;
+        width: 30%;#35443585
     }
     .trending-wrapper{
         margin: 30px;
@@ -46,9 +47,12 @@
     }
     .laptopdropview-img{
         height: 400px;
+        
     }
     .mobiledropview-img{
         height: 500px;
+        float: left;
+        width: 30%
     }
     .search-box{
         width: 300px !important
@@ -65,7 +69,7 @@
         height: 70px
     }
     .aboutus-table{
-        height: 70px
+        height: 160px
     }
     .button{
         margin-left: 705px;

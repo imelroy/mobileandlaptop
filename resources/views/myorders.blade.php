@@ -53,6 +53,7 @@
                     </div>
                   <div class="col-sm-3">
              <div class="remove">
+          
              <a href="#" class="btn btn-warning order-cancel" >Cancel order</a>
              </div>
             </div>

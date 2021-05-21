@@ -46,7 +46,6 @@ route::group(['middleware'=>['AuthCheck']],function(){
     Route::get("mobiledropview/{id}",[MobileController::class,'mobiledropview']);
     Route::get("laptopdropview/{id}",[LaptopController::class,'laptopdropview']);
     Route::get("search",[MobileController::class,'search']);
-   // Route::get("searchlaptop",[LaptopController::class,'searchlaptop']);
     Route::post("add_to_cart",[MobileController::class,'addToCart']);
     Route::get("cartlist",[MobileController::class,'cartList']); 
     Route::get("removecart/{id}",[MobileController::class,'removeCart']); 

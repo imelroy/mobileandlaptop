@@ -14,12 +14,12 @@
     <br><br><br>
     <table class="table table-hover">
     <thead>
-    <th>username</th>
+    <th>Username</th>
     <th>Name</th>
     <th>Email</th>
     <th>Mobile</th>
     <th>Address</th>
-    <th>Password (encrypted)</th>
+    <th>Password</th>
     </thead>
     <tbody>
     <tr>
