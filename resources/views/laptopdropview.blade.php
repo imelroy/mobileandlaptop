@@ -2,10 +2,10 @@
 @section("content")
 <div class="container">
 <div class="row">
-<div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+<div class="col-sm-6">
 <img class="laptopdropview-img" src="{{$laptop['Gallery']}}" alt="">
 </div>
-<div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+<div class="col-sm-6">
 <a href="/laptop">Go Back</a>
        <h2><b>{{$laptop['Model']}}</h2>
        <h3>Price : {{$laptop['Price']}}</h3>

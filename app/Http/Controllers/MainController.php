@@ -103,15 +103,6 @@ class MainController extends Controller
         return redirect('/admin/youraccount');
 
     }
-
-
-
-
-
-
-    
-
-
 }
  
 

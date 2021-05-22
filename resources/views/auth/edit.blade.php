@@ -69,7 +69,7 @@
     </tr>
     <br><center>
     <br>
-    <a href="/home">Go Back</a>
+    <a href="/admin/youraccount">Go Back</a>
     <br>
 
    

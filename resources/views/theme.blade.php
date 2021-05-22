@@ -59,6 +59,9 @@
         float: left;
         width: 30%
     }
+    .mobiledropview-image{
+        height: 500px;
+    }
     .search-box{
         width: 300px !important
     }

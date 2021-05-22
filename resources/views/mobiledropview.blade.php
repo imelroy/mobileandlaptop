@@ -3,7 +3,7 @@
 <div class="container">
 <div class="row">
 <div class="col-sm-6">
-<img class="mobiledropview-img" src="{{$mobile['Gallery']}}" alt="">
+<img class="mobiledropview-image" src="{{$mobile['Gallery']}}" alt="">
 </div>
 <div class="col-sm-6">
 <a href="/mobile">Go Back</a>

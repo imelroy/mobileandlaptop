@@ -25,31 +25,6 @@ class LaptopController extends Controller
          return view('laptopdropview',['laptop'=>$data]);
         
     }
-    // function searchlaptop(Request $req)
-    // {
-    //    $data= Laptop::where('Model', 'like', '%'.$req->input('query').'%')
-    //    ->get();
-
-    //     return view('searchlaptop',['laptops'=>$data]);
-    // }
-
-    function cartList()
-    {
-        
-        $userId=Session::get('id',session('LoggedUser'));
-        $laptops= DB::table('cart')
-        ->join('laptops','cart.product_id','=','laptops.id')
-        ->where('cart.user_id',$userId)
-        ->select('laptops.*','cart.id as cart_id')
-        ->get();
-
-        return view('cartlist',['laptops'=>$laptops]);
-    }
-
     
-    
-
-    
-
 }
    

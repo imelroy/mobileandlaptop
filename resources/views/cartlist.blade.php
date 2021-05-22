@@ -32,7 +32,7 @@
             @endforeach
             @foreach($laptops as $item)
              <div class="col-sm-3">
-                <a href="mobiledetail/{{$item->id}}">
+                <a href="laptopdropview/{{$item->id}}">
                     <img class="trending-images" src="{{$item->Gallery}}">
                   </a>
              </div>
