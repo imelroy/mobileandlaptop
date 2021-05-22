@@ -10,7 +10,7 @@ Rajagiri P.O,<br>
 Kalamassery, Cochin - 683 104,<br>
 Kerala, India.<br><br> Email: admin@rajagiri.edu<br><br>Contact No : +91 484 - 2911111 / 2911507 <br>
    +91 484 - 2532862</h5></p>
- <br><br>
+ <br>
  <p><h2><center><b>Technical Support</h2></p>
 <p><h5><center>Rajagiri College of Social Sciences,<br>
 Rajagiri Valley P. O,<br>

@@ -28,16 +28,21 @@
         height: 1300px
     }
     .slider-text-dark{
-        background-color: #35412766 !important;
+        background-color: #35412766 !important
     
     }
     .trending-image{
-        height: 200px;
+        height: 200px; 
     }
     
     .trening-item{
         float: left;
-        width: 30%;#35443585
+        width: 30%;
+    }
+    .card{
+        margin-left: 160px; 
+        float: left; 
+        width: 50%; 
     }
     .trending-wrapper{
         margin: 30px;
@@ -129,6 +134,9 @@
     }
     .custom-mobile{
         margin: 50px;
+    }
+    .card-img-top{
+        height: 250px;
     }
     
 </style>
