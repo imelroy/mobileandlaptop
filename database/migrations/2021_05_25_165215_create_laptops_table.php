@@ -25,7 +25,7 @@ class CreateLaptopsTable extends Migration
             $table->string("Gallery");
             $table->timestamps();
         });
-        DB::statement("ALTER TABLE laptops ALTER SEQUENCE id RESTART WITH 100;");
+        DB::statement("ALTER TABLE laptops ALTER COLUMN id RESTART WITH 100;");
         //DB::statement("ALTER TABLE laptops SERIAL = 100;");
     }
 
