@@ -25,6 +25,7 @@ class CreateLaptopsTable extends Migration
             $table->string("Gallery");
             $table->timestamps();
         });
+        DB::statement("ALTER TABLE laptops AUTO_INCREMENT = 100;");
     }
 
     /**
