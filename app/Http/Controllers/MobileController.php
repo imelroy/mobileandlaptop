@@ -42,7 +42,6 @@ class MobileController extends Controller
         $ldata= Laptop::where('Model', 'like', '%'.$req->input('query').'%')
         ->get();
 
-       // return view('searchlaptop',['laptops'=>$data]);
         return view('search',['mobiles'=>$mdata],['laptops'=>$ldata]);
     }
     
@@ -94,20 +93,6 @@ class MobileController extends Controller
     
     function orderNow()
     {
-        // $userId=Session::get('id',session('LoggedUser'));
-        //  $mtotal= $mobiles= DB::table('cart')
-        // ->join('mobiles','cart.product_id','=','mobiles.id')
-        // ->where('cart.user_id',$userId)
-        // ->sum('Price')
-        // ->from('mobiles');
-        // $ltotal= $laptopss= DB::table('cart')
-        // ->join('laptops','cart.product_id','=','laptops.id')
-        // ->where('cart.user_id',$userId)
-        // ->sum('Price')
-        // ->from('laptops');
-
-       // return view('ordernow',['total'=>$mtotal+$ltotal]);
-
         $userId=Session::get('id',session('LoggedUser'));
          $mtotal= $mobiles= DB::table('cart')
         ->join('mobiles','cart.product_id','=','mobiles.id')
