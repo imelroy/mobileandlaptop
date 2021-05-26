@@ -95,7 +95,7 @@ class MobileController extends Controller
     function orderNow()
     {
         $userId=Session::get('id',session('LoggedUser'));
-         $mobiles= DB::table('cart')
+        $mtotal= $mobiles= DB::table('cart')
         ->join('mobiles','cart.product_id','=','mobiles.id')
         ->where('cart.user_id',$userId)
         DB::table('mobiles')->sum('Price');
