@@ -96,14 +96,15 @@ class MobileController extends Controller
     {
         $userId=Session::get('id',session('LoggedUser'));
        // $mtotal= $mobiles= DB::table('cart')
+       $mtotal= $mobiles= DB::table('cart')->sum('mobiles.Price');
         ->join('mobiles','cart.product_id','=','mobiles.id')
         ->where('cart.user_id',$userId)
-        $mtotal= $mobiles= DB::table('cart')->sum('mobiles.Price');
+        
        // $ltotal= $laptopss= DB::table('cart')
-        ->join('laptops','cart.product_id','=','laptops.id')
-        ->where('cart.user_id',$userId)
         $ltotal= $laptopss= DB::table('cart')->sum('laptops.Price');
-
+->join('laptops','cart.product_id','=','laptops.id')
+        ->where('cart.user_id',$userId)
+        
          return view('ordernow',['total'=>$mtotal+$ltotal]);
 
         // $userId=Session::get('id',session('LoggedUser'));
