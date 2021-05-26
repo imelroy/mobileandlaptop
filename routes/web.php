@@ -52,5 +52,10 @@ route::group(['middleware'=>['AuthCheck']],function(){
     Route::get("ordernow",[MobileController::class,'orderNow']); 
     Route::post("orderplace",[MobileController::class,'orderPlace']);
     Route::get("myorders",[MobileController::class,'myOrders']);
-    Route::get("cancelorder/{id}",[MobileController::class,'cancelOrder']); 
+    Route::get("/mcancelorder/{id}/delete",[MobileController::class,'mdeleteview']);
+    Route::post("/mcancelorder/{id}",[MobileController::class,'mdestroy']); 
+    Route::get("/lcancelorder/{id}/delete",[MobileController::class,'ldeleteview']);
+    Route::post("/lcancelorder/{id}",[MobileController::class,'ldestroy']); 
+
 });
+

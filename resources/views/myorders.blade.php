@@ -6,8 +6,8 @@
 <h1><b>My Orders </h1><br>
      <div class="col-sm-10">
        
-            
-            @foreach($morders as $item)
+       
+       @foreach($morders as $item)
             <div class=" row searched-item cart-list-devider">
              <div class="col-sm-3">
                 <a href="mobiledetail/{{$item->id}}">
@@ -26,8 +26,12 @@
 
                     </div>
                     <div class="col-sm-3">
+                  
              <div class="remove">
-                <a href="#" class="btn btn-warning order-cancel" >Cancel order</a>
+             <form action="/mcancelorder/{{$item->id}}" method="post">
+             {{csrf_field() }}
+                <a href="/mcancelorder/{{$item->id}}/delete" class="btn btn-warning order-cancel" >Cancel order</a>
+                </form>  
              </div>
             </div>
              </div>
@@ -53,9 +57,12 @@
                     </div>
                   <div class="col-sm-3">
              <div class="remove">
-          
-             <a href="#" class="btn btn-warning order-cancel" >Cancel order</a>
+             <form action="/lcancelorder/{{$item->id}}" method="post">
+             {{csrf_field() }}
+             <a href="/lcancelorder/{{$item->id}}/delete" class="btn btn-warning order-cancel" >Cancel order</a>
+             </form>
              </div>
+
             </div>
              </div>
             

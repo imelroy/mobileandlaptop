@@ -145,9 +145,34 @@ class MobileController extends Controller
         
     }
     
-    function cancelOrder($id)
+    function mdeleteview($id)
     {
-        Order::destroy($id);
+        $morders=Order::find($id);
+        return view('myorders');
+    }
+
+    function mdestroy($id)
+    {
+
+        $morders=Order::find($id);
+
+        $morders->delete();
+        
+        return redirect('myorders');
+    }
+
+     function ldeleteview($id)
+    {
+        $lorders=Order::find($id);
+        return view('myorders');
+    }
+
+    function ldestroy($id)
+    {
+
+        $lorders=Order::find($id);
+
+        $lorders->delete();
         
         return redirect('myorders');
     }
