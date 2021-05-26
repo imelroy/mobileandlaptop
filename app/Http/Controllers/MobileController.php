@@ -106,7 +106,7 @@ class MobileController extends Controller
         // ->sum('Price')
         // ->from('laptops');
 
-        return view('ordernow',['total'=>$mtotal+$ltotal]);
+       // return view('ordernow',['total'=>$mtotal+$ltotal]);
 
         $userId=Session::get('id',session('LoggedUser'));
          $mtotal= $mobiles= DB::table('cart')
