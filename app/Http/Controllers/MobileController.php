@@ -98,11 +98,11 @@ class MobileController extends Controller
          $mtotal= $mobiles= DB::table('cart')
         ->join('mobiles','cart.product_id','=','mobiles.id')
         ->where('cart.user_id',$userId)
-        ->sum('mobiles.Price');
+        sum('mobiles.Price');
         $ltotal= $laptopss= DB::table('cart')
         ->join('laptops','cart.product_id','=','laptops.id')
         ->where('cart.user_id',$userId)
-        ->sum('laptops.Price');
+        sum('laptops.Price');
 
          return view('ordernow',['total'=>$mtotal+$ltotal]);
 
