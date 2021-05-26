@@ -21,7 +21,7 @@ class CreateLaptopsTable extends Migration
             $table->string("Platform");
             $table->string("Processor");
             $table->string("Graphics");
-            $table->string("Price");
+            $table->integer("Price");
             $table->string("Gallery");
             $table->timestamps();
         });

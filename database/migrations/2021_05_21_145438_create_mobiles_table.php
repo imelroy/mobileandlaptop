@@ -20,7 +20,7 @@ class CreateMobilesTable extends Migration
             $table->string("Display");
             $table->string("Camera");
             $table->string("Features");
-            $table->string("Price");
+            $table->integer("Price");
             $table->string("Gallery");
             $table->timestamps();
         });
