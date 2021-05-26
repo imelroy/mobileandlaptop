@@ -14,7 +14,7 @@ class CreateLaptopsTable extends Migration
     public function up()
     {
         Schema::create('laptops', function (Blueprint $table) {
-            $table->increments('id',100);
+            $table->id()->startingValue(100);
             $table->string("Model");
             $table->string("Memory");
             $table->string("Display");
@@ -25,7 +25,7 @@ class CreateLaptopsTable extends Migration
             $table->string("Gallery");
             $table->timestamps();
         });
-        DB::statement(“ALTER SEQUENCE $table_$primarykey_seq MINVALUE 100 START 100 RESTART 100”);
+       // DB::statement(“ALTER SEQUENCE $table_$primarykey_seq MINVALUE 100 START 100 RESTART 100”);
       //  DB::statement("ALTER TABLE laptops SEQUENCE id RESTART WITH 100;");
         //DB::statement("ALTER TABLE laptops AUTO_INCREMENT = 100;");
     }
