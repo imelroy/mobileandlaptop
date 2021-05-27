@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log in</title>
+    <title>Admin Log in</title>
 </head>
 <body>
     <div class="login">
@@ -13,18 +13,15 @@
     <div class="col col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4"></div>
     <br> 
     <div class="col col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
-    <h2><center>LOG IN</h1><br>
-    <form action="{{ route('auth.check') }}" method="post">
-    @if(Session::get('fail'))
-    <div class="alert alert-danger">
-    {{ Session::get('fail')}}
-    </div>
-    @endif
+    <h2><center>ADMIN LOG IN</h1><br>
+    
+    <form action="login" method="POST" >
+    
     @csrf
    
     <div class="form-group">
     <label>Email</label>
-    <input type="text" class="form-control" name="email" placeholder=" Enter your email" value="{{ old('email') }}">
+    <input type="text" class="form-control" name="email" placeholder=" Enter your email" >
     <span class="text-danger">@error('email') {{ $message }} @enderror</span>
     </div>
     <br>
@@ -41,11 +38,9 @@
     <button  type="submit" class="btn btn-block btn-success login-page">Sign in</button>
     </td>
     </tr>
-    
-    <br><br><center>
-    <p class="izU2O ">Don't have an account? <a href="{{ route('auth.register') }}" tabindex="0"><span class="_7UhW9   xLCgt       qyrsm      gtFbE      se6yk        ">Sign up</span></a></p>
-    <br>
-    <p class="izU2O ">Sign in as <a href="/login" tabindex="0"><span class="_7UhW9   xLCgt       qyrsm      gtFbE      se6yy        ">Admin</span></a></p>
+    <br><br>
+    <p class="izU2O ">Sign in as <a href="{{ route('auth.login') }}" tabindex="0"><span class="_7UhW9   xLCgt       qyrsm      gtFbE      se6yy        ">Customer</span></a></p>
+   
     </form>
     </div></div>
     </div>

@@ -10,6 +10,7 @@ use App\Http\Controllers\DispmobileController;
 use App\Http\Controllers\DisplaptopController;
 use App\Http\Controllers\YouraccountController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\RealAdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +21,23 @@ use App\Http\Controllers\MainController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/login', function () {
+    return view('login');
+});
+Route::get('/logout', function () {
+    Session::forget('user');
+    return redirect('login');
+});
+
+
+Route::post("/login",[RealAdminController::class,'login']);
+Route::get("/adminhome",[RealAdminController::class,'create']);
+Route::get("/addmobile",[RealAdminController::class,'addMobile']);
+Route::post("/mobileread",[RealAdminController::class,'store']);
+Route::get("/addlaptop",[RealAdminController::class,'addLaptop']);
+Route::post("/laptopread",[RealAdminController::class,'storeLaptop']);
+
+
 
 
 
@@ -27,7 +45,7 @@ route::post('/auth/save',[MainController::class,'save'])->name('auth.save');
 route::post('/auth/check',[MainController::class,'check'])->name('auth.check');
 
 route::get('/auth/logout',[MainController::class,'logout'])->name('auth.logout');
-
+route::get('/auth/register',[MainController::class,'register'])->name('auth.register');
 
 
 route::get('/',[MainController::class,'login'])->name('auth.login');
@@ -35,7 +53,7 @@ route::get('/',[MainController::class,'login'])->name('auth.login');
 route::group(['middleware'=>['AuthCheck']],function(){
     Route::get('/home',[MobileController::class,'index']);
     route::get('/admin/youraccount',[MainController::class,'youraccount']);
-    route::get('/auth/register',[MainController::class,'register'])->name('auth.register');
+    
     route::get('/aboutus',[AboutusController::class,'create']);
     route::get('/admin/{id}/auth/edit',[MainController::class,'edit']);
     route::post('/usereditprocess/{id}',[MainController::class,'update']);
