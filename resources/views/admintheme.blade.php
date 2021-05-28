@@ -10,7 +10,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">KNOWHERE</a>
+    <a class="navbar-brand" href="/adminhome">KNOWHERE</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -21,8 +21,8 @@
             View Products
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Mobile</a></li>
-            <li><a class="dropdown-item" href="#">Laptop</a></li>
+            <li><a class="dropdown-item" href="/viewallmobiles">Mobile</a></li>
+            <li><a class="dropdown-item" href="/viewalllaptops">Laptop</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">

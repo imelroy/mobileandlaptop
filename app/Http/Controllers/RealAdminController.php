@@ -22,48 +22,7 @@ class RealAdminController extends Controller
             return redirect('/adminhome');
         }
 
-        // $req->validate([
-        //     'email'=>'required|email',
-        //     'password'=>'required'
-        // ]);
-
-        // $userInfo = RealAdmin::where('email','=',$req->email)->first();
-        // if(!$userInfo){
-        //     return back()-> with ('fail', 'We dont recognize your email');
-        // }else {
-        //     //check password
-        //     if(Hash::check($req->password,$userInfo->password)){
-        //         $req->session()->put('LoggedUser',$userInfo->id);
-        //         return redirect('/home');
-        //     }else {
-        //         return back()-> with ('fail', 'Incorrect Password');
-        //     }
-        // }
-
-
-
-        // $req->validate([
-        //     'email'=>'required',
-        //     'password'=>'required'
-        // ]);
-        // $getemail=$req->input('email');
-        // $getpassword=$req->input('password');
-        // $data=DB::select('select email,password from realadmins where email=? and password=?',[$getemail,$getpassword]);
-
-        // if($data)
-        // {
-        //     $dat= $req->input();
-        //     $req->session()->put('LoggedUser',$dat['email']);
-        //     return view('adminlogin')
-        // }
-        // else
-        // {
-        //     return back()->with('fail', 'Incorrect Email or Password');
-        // }
-
-
-
-        
+       
     }
     public function create()
     {
@@ -136,5 +95,117 @@ class RealAdminController extends Controller
 
         return redirect('/adminhome');
 
+    }
+
+    public function indexmobile()
+    {
+    
+        $mobiles=Mobile::all();
+
+        return view('viewallmobiles',compact('mobiles'));
+
+    }
+    public function indexlaptop()
+    {
+    
+        $laptops=Laptop::all();
+
+        return view('viewalllaptops',compact('laptops'));
+
+    }
+
+    public function editmobile($id)
+    {
+        $mobiles=Mobile::find($id);
+        return view('mobileeditview',compact('mobiles'));
+    }
+
+    public function updatemobile(Request $request, $id)
+    {
+        $mobile=Mobile::find($id);
+
+        $getModel= request('Model');
+        $getMemory= request('Memory');
+        $getDisplay= request('Display');
+        $getCamera= request('Camera');
+        $getFeatures= request('Features');
+        $getPrice= request('Price');
+        $getGallery= request('Gallery');
+        
+        $mobile->Model=$getModel;
+        $mobile->Memory=$getMemory;
+        $mobile->Display=$getDisplay;
+        $mobile->Camera=$getCamera;
+        $mobile->Features=$getFeatures;
+        $mobile->Price=$getPrice;
+        $mobile->Gallery=$getGallery;
+       
+
+        $mobile->save();
+
+        return redirect('/viewallmobiles');
+    }
+
+    public function editlaptop($id)
+    {
+        $laptops=Laptop::find($id);
+        return view('laptopeditview',compact('laptops'));
+    }
+
+    public function updatelaptop(Request $request, $id)
+    {
+        $laptop=Laptop::find($id);
+
+        $getModel= request('Model');
+        $getMemory= request('Memory');
+        $getDisplay= request('Display');
+        $getPlatform= request('Platform');
+        $getProcessor= request('Processor');
+        $getGraphics= request('Graphics');
+        $getPrice= request('Price');
+        $getGallery= request('Gallery');
+        
+        $laptop->Model=$getModel;
+        $laptop->Memory=$getMemory;
+        $laptop->Display=$getDisplay;
+        $laptop->Platform=$getPlatform;
+        $laptop->Processor=$getProcessor;
+        $laptop->Graphics=$getGraphics;
+        $laptop->Price=$getPrice;
+        $laptop->Gallery=$getGallery;
+
+        $laptop->save();
+       
+        return redirect('/viewalllaptops');
+    }
+
+    public function mobiledeleteview($id)
+    {
+        $mobiles=Mobile::find($id);
+        return view('mobiledeleteview',compact('mobiles'));
+    }
+
+    public function destroymobile($id)
+    {
+        $mobile=Mobile::find($id);
+
+        $mobile->delete();
+
+        return redirect('/viewallmobiles');
+    }
+
+    public function laptopdeleteview($id)
+    {
+        $laptops=Laptop::find($id);
+        return view('laptopdeleteview',compact('laptops'));
+    }
+
+    public function destroylaptop($id)
+    {
+        $laptop=Laptop::find($id);
+
+        $laptop->delete();
+
+        return redirect('/viewalllaptops');
     }
 }

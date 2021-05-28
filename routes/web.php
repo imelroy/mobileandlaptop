@@ -16,8 +16,8 @@ use App\Http\Controllers\RealAdminController;
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
+| Here is where you can register web Routes for your application. These
+| Routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
 */
@@ -36,30 +36,36 @@ Route::get("/addmobile",[RealAdminController::class,'addMobile']);
 Route::post("/mobileread",[RealAdminController::class,'store']);
 Route::get("/addlaptop",[RealAdminController::class,'addLaptop']);
 Route::post("/laptopread",[RealAdminController::class,'storeLaptop']);
+Route::get("/viewallmobiles",[RealAdminController::class,'indexmobile']);
+Route::get("/viewalllaptops",[RealAdminController::class,'indexlaptop']);
+Route::get('/mobile/{id}/editmobile', [RealAdminController::class,'editmobile']);
+Route::post('/mobileeditprocess/{id}', [RealAdminController::class,'updatemobile']);
+Route::get('/laptop/{id}/editlaptop', [RealAdminController::class,'editlaptop']);
+Route::post('/laptopeditprocess/{id}', [RealAdminController::class,'updatelaptop']);
+Route::get('/mobile/{id}/delete', [RealAdminController::class,'mobiledeleteview']);
+Route::post('/mobiledeleteprocess/{id}',[RealAdminController::class,'destroymobile']);
+Route::get('/laptop/{id}/delete', [RealAdminController::class,'laptopdeleteview']);
+Route::post('/laptopdeleteprocess/{id}',[RealAdminController::class,'destroylaptop']);
 
 
+Route::post('/auth/save',[MainController::class,'save'])->name('auth.save');
+Route::post('/auth/check',[MainController::class,'check'])->name('auth.check');
+
+Route::get('/auth/logout',[MainController::class,'logout'])->name('auth.logout');
+Route::get('/auth/register',[MainController::class,'register'])->name('auth.register');
 
 
+Route::get('/',[MainController::class,'login'])->name('auth.login');
 
-route::post('/auth/save',[MainController::class,'save'])->name('auth.save');
-route::post('/auth/check',[MainController::class,'check'])->name('auth.check');
-
-route::get('/auth/logout',[MainController::class,'logout'])->name('auth.logout');
-route::get('/auth/register',[MainController::class,'register'])->name('auth.register');
-
-
-route::get('/',[MainController::class,'login'])->name('auth.login');
-
-route::group(['middleware'=>['AuthCheck']],function(){
+Route::group(['middleware'=>['AuthCheck']],function(){
     Route::get('/home',[MobileController::class,'index']);
-    route::get('/admin/youraccount',[MainController::class,'youraccount']);
-    
-    route::get('/aboutus',[AboutusController::class,'create']);
-    route::get('/admin/{id}/auth/edit',[MainController::class,'edit']);
-    route::post('/usereditprocess/{id}',[MainController::class,'update']);
-    route::get('/contactus',[ContactusController::class,'create']);
-    route::get('/mobile',[DispmobileController::class,'index']);
-    route::get('/laptop',[DisplaptopController::class,'index']);
+    Route::get('/admin/youraccount',[MainController::class,'youraccount']);
+    Route::get('/aboutus',[AboutusController::class,'create']);
+    Route::get('/admin/{id}/auth/edit',[MainController::class,'edit']);
+    Route::post('/usereditprocess/{id}',[MainController::class,'update']);
+    Route::get('/contactus',[ContactusController::class,'create']);
+    Route::get('/mobile',[DispmobileController::class,'index']);
+    Route::get('/laptop',[DisplaptopController::class,'index']);
     Route::get("mobiledetail/{id}",[MobileController::class,'mobiledetail']);
     Route::get("mobiledropview/{id}",[MobileController::class,'mobiledropview']);
     Route::get("laptopdropview/{id}",[LaptopController::class,'laptopdropview']);
