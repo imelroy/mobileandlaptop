@@ -13,6 +13,7 @@
   <table class="table table-borderless">
   
      <tr>
+         <th> ID </th>
          <th> MODEL </th>
          <th> MEMORY </th>
          <th> DISPLAY </th>
@@ -25,6 +26,7 @@
 
 @foreach($mobiles as $mobile)
      <tr>
+         <td> {{  $mobile->id }} </td>
          <td> {{  $mobile->Model }} </td>
          <td> {{  $mobile->Memory }} </td>
          <td> {{  $mobile->Display }} </td>
@@ -33,9 +35,9 @@
          <td> {{  $mobile->Price }} </td>
          <td> {{  $mobile->Gallery }} </td>
 
-<td> <a class="btn btn-warning" href="/mobile/{{$mobile->id}}/editmobile">  Edit  </a> </td>
+<td> <a class="btn btn-warning" href="/mobile/{{$mobile->id}}/editmobile">Update product</a> </td>
 
-<td>  <a class="btn btn-danger" href="/mobile/{{$mobile->id}}/delete"  > Delete  </a>  </td>
+<td>  <a class="btn btn-danger" href="/mobile/{{$mobile->id}}/delete"  >Remove product</a>  </td>
 
      </tr>
 

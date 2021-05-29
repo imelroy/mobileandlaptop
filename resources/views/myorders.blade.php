@@ -4,15 +4,16 @@
 <div class="custom-orders">
 <div class="order-details">
 <h1><b>My Orders </h1><br>
+<div style="text-align:center"><button id="hide" class="btn btn-primary" onclick="window.print()">Print</button></div>
      <div class="col-sm-10">
        
        
        @foreach($morders as $item)
             <div class=" row searched-item cart-list-devider">
              <div class="col-sm-3">
-                <a href="mobiledetail/{{$item->id}}">
+                <a  href="mobiledetail/{{$item->id}}" >
                 
-                    <img class="trending-image" src="{{$item->Gallery}}">
+                    <img type="hidden" class="trending-image" src="{{$item->Gallery}}">
                   </a>
              </div>
              <div class="col-sm-4">
@@ -28,10 +29,9 @@
                     <div class="col-sm-3">
                   
              <div class="remove">
-             <form action="/mcancelorder/{{$item->id}}" method="post">
-             {{csrf_field() }}
-                <a href="/mcancelorder/{{$item->id}}/delete" class="btn btn-warning order-cancel" >Cancel order</a>
-                </form>  
+             
+                <button  href="/mcancelorder/{{$item->id}}/delete" class="btn btn-warning order-cancel" >Cancel order</button>
+                 
              </div>
             </div>
              </div>
@@ -57,10 +57,9 @@
                     </div>
                   <div class="col-sm-3">
              <div class="remove">
-             <form action="/lcancelorder/{{$item->id}}" method="post">
-             {{csrf_field() }}
-             <a href="/lcancelorder/{{$item->id}}/delete" class="btn btn-warning order-cancel" >Cancel order</a>
-             </form>
+             
+             <button href="/lcancelorder/{{$item->id}}/delete"  class="btn btn-warning order-cancel" >Cancel order</button>
+             
              </div>
 
             </div>

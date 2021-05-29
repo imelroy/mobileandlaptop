@@ -80,6 +80,6 @@ Route::group(['middleware'=>['AuthCheck']],function(){
     Route::post("/mcancelorder/{id}",[MobileController::class,'mdestroy']); 
     Route::get("/lcancelorder/{id}/delete",[MobileController::class,'ldeleteview']);
     Route::post("/lcancelorder/{id}",[MobileController::class,'ldestroy']); 
-
+    
 });
 

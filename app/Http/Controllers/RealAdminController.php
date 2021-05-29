@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\Mobile;
 use App\Models\Laptop;
+use App\Models\Admin;
 class RealAdminController extends Controller
 {
     function login(Request $req)
@@ -208,4 +209,6 @@ class RealAdminController extends Controller
 
         return redirect('/viewalllaptops');
     }
+
+    
 }

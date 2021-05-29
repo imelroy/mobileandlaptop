@@ -7,6 +7,7 @@ if(Session::has('LoggedUser'))
 }
 
 ?>
+<div id="hide">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="/home">KNOWHERE</a>
@@ -59,5 +60,6 @@ if(Session::has('LoggedUser'))
         </li>
         </ul>
     </div>
+  </div>
   </div>
 </nav>

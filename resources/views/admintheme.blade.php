@@ -42,7 +42,7 @@
             Account
           </a>
           <ul class="dropdown-menu " aria-labelledby="navbarDropdown left">
-            <li><a class="dropdown-item" href="/admin/youraccount">Your Account</a></li>
+            <li><a class="dropdown-item" href="/viewallusers">User list</a></li>
             
             <li><a class="dropdown-item" href="/logout">Sign out</a></li>
           </ul>

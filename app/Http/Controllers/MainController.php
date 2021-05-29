@@ -77,7 +77,7 @@ class MainController extends Controller
     {
         $users=Admin::find($id);
         return view('auth.edit',compact('users'));
-    }
+    }   
 
     public function update(Request $request, $id)
     {

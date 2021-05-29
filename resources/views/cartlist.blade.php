@@ -1,5 +1,6 @@
 @extends("theme")
 @section("content")
+
 <div class="container">
     <div class=" row  cart-list-deviderr"> 
     <div class="col-sm-10">
@@ -9,6 +10,7 @@
             <a class="btn btn-success button" href="ordernow">Order Now</a>
             <a href="/home">Go Back</a> <br> <br>
             @foreach($mobiles as $item)
+            <div id="hide">
             <div class="col-sm-3">
                 <a href="mobiledetail/{{$item->id}}">
                     <img class="trending-imagee" src="{{$item->Gallery}}">
@@ -29,8 +31,10 @@
              </div>
             </div>
             </div>
+            </div>
             @endforeach
             @foreach($laptops as $item)
+            <div id="hide">
              <div class="col-sm-3">
                 <a href="laptopdropview/{{$item->id}}">
                     <img class="trending-images" src="{{$item->Gallery}}">
@@ -47,7 +51,7 @@
              <div class="remove">
                 <a href="/removecart/{{$item->cart_id}}" class="btn btn-warning" >Remove from Cart</a>
              </div>
-            </div></div>
+            </div></div></div>
             @endforeach
            
           </div>

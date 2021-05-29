@@ -51,7 +51,7 @@
 
  <tr>
      <td></td>
-     <td><center> <button onclick="return confirm('Are you sure want to delete ?')" class="btn btn-danger"> DELETE  </button></td>
+     <td><center> <button onclick="return confirm('Are you sure want to delete ?')" class="btn btn-danger"> Remove product </button></td>
  </tr>
 </table>
 

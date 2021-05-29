@@ -35,9 +35,9 @@
          <td> {{  $laptop->Price }} </td>
          <td> {{  $laptop->Gallery }} </td>
 
-<td> <a class="btn btn-warning" href="/laptop/{{$laptop->id}}/editlaptop">  Edit  </a> </td>
+<td> <a class="btn btn-warning" href="/laptop/{{$laptop->id}}/editlaptop">Update product</a> </td>
 
-<td>  <a class="btn btn-danger" href="/laptop/{{$laptop->id}}/delete"  > Delete  </a>  </td>
+<td>  <a class="btn btn-danger" href="/laptop/{{$laptop->id}}/delete"  >Remove product</a>  </td>
 
      </tr>
 
