@@ -2,7 +2,7 @@
 
 @section("contentdata")
 
-<div class="container">
+<div class="containerdata">
 <div class="row">
 
 
