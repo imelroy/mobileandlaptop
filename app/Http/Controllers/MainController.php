@@ -73,7 +73,7 @@ class MainController extends Controller
         return view('admin.youraccount',$data);
     }
 
-    public function edit($id)
+    public function editUser($id)
     {
         $users=Admin::find($id);
         return view('auth.edit',compact('users'));
@@ -100,7 +100,7 @@ class MainController extends Controller
 
         $admin->save();
 
-        return redirect('/admin/youraccount');
+        return redirect('/youraccount');
 
     }
 }

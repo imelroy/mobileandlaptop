@@ -67,9 +67,9 @@ Route::get('/',[MainController::class,'login'])->name('auth.login');
 
 Route::group(['middleware'=>['AuthCheck']],function(){
     Route::get('/home',[MobileController::class,'index']);
-    Route::get('/admin/youraccount',[MainController::class,'youraccount']);
+    Route::get('/youraccount',[MainController::class,'youraccount']);
     Route::get('/aboutus',[AboutusController::class,'create']);
-    Route::get('/admin/{id}/auth/edit',[MainController::class,'edit']);
+    Route::get('/admin/{id}/auth/editUser',[MainController::class,'editUser']);
     Route::post('/usereditprocess/{id}',[MainController::class,'update']);
     Route::get('/contactus',[ContactusController::class,'create']);
     Route::get('/mobile',[DispmobileController::class,'index']);

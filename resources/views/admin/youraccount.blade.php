@@ -29,7 +29,7 @@
         <td>{{ $LoggedUserInfo['mobile'] }}</td>
         <td>{{ $LoggedUserInfo['address'] }}</td>
         <td>{{ $LoggedUserInfo['password'] }}</td>
-        <td><a class="btn btn-info" href="/admin/{{$LoggedUserInfo->id}}/auth/edit">Edit</a></td>
+        <td><a class="btn btn-info" href="/admin/{{$LoggedUserInfo->id}}/auth/editUser">Edit</a></td>
     
        
     </tr>

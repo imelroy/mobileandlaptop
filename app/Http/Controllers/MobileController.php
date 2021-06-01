@@ -115,7 +115,7 @@ class MobileController extends Controller
              $order= new Order;
              $order->product_id=$cart['product_id'];
              $order->user_id=$cart['user_id'];
-             $order->status="Success";
+             $order->status="Getting order ready";
              $order->payment_method=$req->payment;
              $order->payment_status="Success";
              $order->address=$req->address;
