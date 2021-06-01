@@ -9,6 +9,9 @@ use App\Models\User;
 use App\Models\Mobile;
 use App\Models\Laptop;
 use App\Models\Admin;
+use App\Models\RealAdmin;
+use App\Models\Order;
+use Session;
 class RealAdminController extends Controller
 {
     function login(Request $req)
@@ -210,5 +213,56 @@ class RealAdminController extends Controller
         return redirect('/viewalllaptops');
     }
 
+    public function indexorders()
+    {
+        
+        $order=Order::all();
+
+        return view('viewallorders',compact('order'));
+
+    }
+
+    public function editcustomerorders($id)
+    {
+        $order=Order::find($id);
+        return view('ordereditview',compact('order'));
+    }
+
+    public function updatecustomerorders(Request $request, $id)
+    {
+        $order=Order::find($id);
+
+        $getproduct_id= request('product_id');
+        $getuser_id= request('user_id');
+        $getstatus= request('status');
+        $getpayment_method= request('payment_method');
+        $getpayment_status= request('payment_status');
+        $getaddress= request('address');
+        
+        $order->product_id=$getproduct_id;
+        $order->user_id=$getuser_id;
+        $order->status=$getstatus;
+        $order->payment_method=$getpayment_method;
+        $order->payment_status=$getpayment_status;
+        $order->address=$getaddress;
+       
+        $order->save();
+
+        return redirect('/viewallorders');
+    }
+
+    public function indexviewallusers()
+    {
     
+        $users=Admin::all();
+
+        return view('viewallusers',compact('users'));
+    }
+
+    function removeUser($id)
+    {
+        Admin::destroy($id);
+        return redirect('viewallusers');
+    }
+
 }

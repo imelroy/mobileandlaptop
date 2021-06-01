@@ -31,6 +31,9 @@ Route::get('/logout', function () {
 
 
 Route::post("/login",[RealAdminController::class,'login']);
+
+Route::group(['middleware'=>['AdminCheck']],function(){
+
 Route::get("/adminhome",[RealAdminController::class,'create']);
 Route::get("/addmobile",[RealAdminController::class,'addMobile']);
 Route::post("/mobileread",[RealAdminController::class,'store']);
@@ -46,7 +49,12 @@ Route::get('/mobile/{id}/delete', [RealAdminController::class,'mobiledeleteview'
 Route::post('/mobiledeleteprocess/{id}',[RealAdminController::class,'destroymobile']);
 Route::get('/laptop/{id}/delete', [RealAdminController::class,'laptopdeleteview']);
 Route::post('/laptopdeleteprocess/{id}',[RealAdminController::class,'destroylaptop']);
-
+Route::get("/viewallusers",[RealAdminController::class,'indexviewallusers']);
+Route::get("admin/{id}",[RealAdminController::class,'removeUser']);
+Route::get("/viewallorders",[RealAdminController::class,'indexorders']);
+Route::get('/customerorderlist/{id}/editcustomerorders', [RealAdminController::class,'editcustomerorders']);
+Route::post('/ordereditprocess/{id}', [RealAdminController::class,'updatecustomerorders']);
+});
 
 Route::post('/auth/save',[MainController::class,'save'])->name('auth.save');
 Route::post('/auth/check',[MainController::class,'check'])->name('auth.check');

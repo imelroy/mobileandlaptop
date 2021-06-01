@@ -115,9 +115,9 @@ class MobileController extends Controller
              $order= new Order;
              $order->product_id=$cart['product_id'];
              $order->user_id=$cart['user_id'];
-             $order->status="Processing";
+             $order->status="Success";
              $order->payment_method=$req->payment;
-             $order->payment_status="Pending";
+             $order->payment_status="Success";
              $order->address=$req->address;
              $order->save();
              Cart::where('user_id',$userId)->delete(); 
@@ -139,9 +139,7 @@ class MobileController extends Controller
          ->get();
          
          return view('myorders',['morders'=>$morders],['lorders'=>$lorders]);
-
-
-        
+      
     }
     
     function mdeleteview($id)
@@ -152,8 +150,7 @@ class MobileController extends Controller
 
     function mdestroy($id)
     {
-
-        $morders=Order::find($id);
+        $morders=Cart::find($id);
 
         $morders->delete();
         
@@ -174,6 +171,7 @@ class MobileController extends Controller
         $lorders->delete();
         
         return redirect('myorders');
+        
     }
     
    

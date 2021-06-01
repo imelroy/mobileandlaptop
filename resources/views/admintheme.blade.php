@@ -23,6 +23,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="/viewallmobiles">Mobile</a></li>
             <li><a class="dropdown-item" href="/viewalllaptops">Laptop</a></li>
+            
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -34,7 +35,11 @@
           <li><a class="dropdown-item" href="/addlaptop">Laptop</a></li>
           </ul>
         </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="/viewallorders">View all orders</a>
+        </li>
       </ul>
+      
       <ul class="navbar-nav  mb-2 mb-lg-xl-xxl-0 navbar-right">
         
       <li class="nav-item dropdown ">
