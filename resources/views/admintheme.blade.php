@@ -38,6 +38,9 @@
         <li class="nav-item">
           <a class="nav-link " aria-current="page" href="/viewallorders">View all orders</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="/viewallusers">Customers List</a>
+        </li>
       </ul>
       
       <ul class="navbar-nav  mb-2 mb-lg-xl-xxl-0 navbar-right">
