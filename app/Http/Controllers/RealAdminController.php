@@ -66,7 +66,7 @@ class RealAdminController extends Controller
 
         $mobile->save();
 
-        return redirect('/adminhome');
+        return redirect('/addmobile');
 
     }
 
