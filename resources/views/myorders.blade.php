@@ -25,14 +25,14 @@
                       <h5>Payment Status : {{$item->payment_status}}</h5>
 
                     </div>
-                    <div class="col-sm-3">
+                    <!-- <div class="col-sm-3">
                   
              <div class="remove">
              
                 <button  href="/mcancelorder/{{$item->id}}/delete" class="btn btn-warning order-cancel" >Cancel order</button>
                  
              </div>
-            </div>
+            </div> -->
              </div>
             
             </div>
@@ -53,14 +53,14 @@
                       <h5>Payment Status : {{$item->payment_status}}</h5>
 
                     </div>
-                  <div class="col-sm-3">
+                  <!-- <div class="col-sm-3">
              <div class="remove">
              
              <button href="/lcancelorder/{{$item->id}}/delete"  class="btn btn-warning order-cancel" >Cancel order</button>
              
              </div>
 
-            </div>
+            </div> -->
              </div>
             
             </div>
