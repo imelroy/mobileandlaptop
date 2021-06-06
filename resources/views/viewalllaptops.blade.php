@@ -13,6 +13,7 @@
   <table class="table table-borderless">
   
      <tr>
+         <th> ID </th>
          <th> MODEL </th>
          <th> MEMORY </th>
          <th> DISPLAY </th>
@@ -26,6 +27,7 @@
 
 @foreach($laptops as $laptop)
      <tr>
+         <td> {{  $laptop->id }} </td>
          <td> {{  $laptop->Model }} </td>
          <td> {{  $laptop->Memory }} </td>
          <td> {{  $laptop->Display }} </td>
