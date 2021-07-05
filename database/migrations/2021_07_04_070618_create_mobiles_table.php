@@ -15,13 +15,13 @@ class CreateMobilesTable extends Migration
     {
         Schema::create('mobiles', function (Blueprint $table) {
             $table->id();
-            $table->string("Model");
+            $table->string("Model")->unique();
             $table->string("Memory");
             $table->string("Display");
             $table->string("Camera");
             $table->string("Features");
             $table->integer("Price");
-            $table->string("Gallery");
+            $table->string("Gallery")->unique();
             $table->timestamps();
         });
     }

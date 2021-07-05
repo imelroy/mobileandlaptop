@@ -66,7 +66,7 @@ class RealAdminController extends Controller
 
         $mobile->save();
 
-        return redirect('/addmobile');
+        return redirect('/viewallmobiles');
 
     }
 
@@ -97,7 +97,7 @@ class RealAdminController extends Controller
 
         $laptop->save();
 
-        return redirect('/adminhome');
+        return redirect('/viewalllaptops');
 
     }
 

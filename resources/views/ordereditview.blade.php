@@ -10,34 +10,50 @@
 <form action="/ordereditprocess/{{ $order->id }}" method="post">
 
 {{ csrf_field() }}
-
+<br><br>
+<h2><center>ORDER UPDATE</H2>
+<br>
 <table class="table table-borderless">
 <center>
-<br><br><br>
+<br>
 
  <tr>
-     <td>product_id</td>
+     <td>Product ID</td>
      <td><input value="{{ $order->product_id }}" name="product_id" type="text" class="form-control">
      </td>
  </tr>
  <tr>
-     <td>user_id</td>
+     <td>User ID</td>
      <td><input value="{{ $order->user_id }}" name="user_id" type="text" class="form-control">
 </td>
  </tr>
+
  <tr>
-     <td>status</td>
-     <td><input value="{{ $order->status }}" name="status" type="text" class="form-control">
-</td>
- </tr>
+    <td>Status</td>
+    <td><select class="form-select" value="{{ $order->status }}" aria-label="Default select example" name="status">
+              <option selected value="Getting order ready">Getting order ready</option>
+              <option value="Out for Delivery">Out for Delivery</option>
+              <option value="Delivered">Delivered</option>
+              <option value="Pending payment">Pending payment</option>
+              <option value="Failed">Failed</option>
+              <option value="Refunded">Refunded</option>
+              <option value="Cancelled">Cancelled</option>
+       </select></td> 
+</tr>
  <tr>
-     <td>payment_method </td>
+     <td>Payment Method </td>
      <td><input value="{{ $order->payment_method }}" name="payment_method" type="text" class="form-control">
 </td>
+
 <tr>
-     <td>payment_status</td>
-     <td><input value="{{ $order->payment_status }}" name="payment_status" type="text" class="form-control">
-</td>
+    <td>Payment Status</td>
+    <td><select class="form-select" aria-label="Default select example" name="payment_status">
+          <option selected value="Success">Success</option>
+              <option value="Pending">Pending</option>
+              <option value="Cancelled">Cancelled</option>
+              <option value="Rejected">Rejected</option>
+       </select></td> 
+</tr>
 <tr>
      <td>address</td>
      <td><input value="{{ $order->address }}" name="address" type="text" class="form-control">
