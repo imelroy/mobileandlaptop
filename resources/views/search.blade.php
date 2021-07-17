@@ -1,6 +1,7 @@
 @extends('theme')
 @section("content")
 <div class="custom-mobile">
+<title>Search Result</title>
 <h1><b><center>Search Result</h1>
 <br><br>
 

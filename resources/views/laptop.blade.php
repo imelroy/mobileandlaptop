@@ -1,6 +1,7 @@
 @extends("theme")
 @section("content")
 <div class="container">
+<title>Laptop</title>
 <div class="trending-wrapper">
         <h1><b>Laptops</h1>
         <br><br>

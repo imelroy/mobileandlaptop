@@ -1,6 +1,7 @@
 @extends("theme")
 @section("content")
 <div class="container">
+<title>Mobile</title>
 <div class="trending-wrapper">
         <h1><b>Smart Phones</h1>
         <br>

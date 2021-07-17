@@ -1,6 +1,7 @@
 @extends("theme")
 @section("content")
 <div class="custom-mobiles">
+<title>Home</title>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           @foreach($mobiles as $item)

@@ -1,6 +1,7 @@
 @extends("theme")
 @section("content")
 <div class="custom-product">
+<title>Order Payment</title>
      <div class="col-sm-10">
         <table class="table table-borderless">
          

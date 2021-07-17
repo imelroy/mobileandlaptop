@@ -1,7 +1,8 @@
 @extends("theme")
 @section("content")
+<title>Contact Us</title>
 <br>
-<h1><b><center>  Mobile&Laptop Help Center | 24x7 Customer Care Support</h1>
+<h1><b><center>  Help Center | 24x7 Customer Care Support</h1>
 <div class="container">
 <br><br><br><br>
 <p><h2><center><b>Headquarters</h2></p>

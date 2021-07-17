@@ -1,6 +1,6 @@
 @extends("theme")
 @section("content")
-
+<title>My Orders</title>
 <div class="custom-orders">
 <div class="order-details">
 <h1><b>My Orders </h1><br>
@@ -25,14 +25,7 @@
                       <h5>Payment Status : {{$item->payment_status}}</h5>
 
                     </div>
-                    <!-- <div class="col-sm-3">
-                  
-             <div class="remove">
-             
-                <button  href="/mcancelorder/{{$item->id}}/delete" class="btn btn-warning order-cancel" >Cancel order</button>
-                 
-             </div>
-            </div> -->
+                    
              </div>
             
             </div>

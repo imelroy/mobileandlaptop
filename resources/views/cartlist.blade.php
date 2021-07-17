@@ -2,6 +2,7 @@
 @section("content")
 
 <div class="container">
+<title>Cart</title>
     <div class=" row  cart-list-deviderr"> 
     <div class="col-sm-10">
         <div class="trending-wrapperr">
