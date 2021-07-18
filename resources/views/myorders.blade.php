@@ -19,11 +19,11 @@
              <div class="col-sm-4">
                     <div class="">
                       <h3>Model : {{$item->Model}}</h3>
-                      <h5>Order Status : {{$item->status}}</h5>
+                      <h5>Order status : {{$item->status}}</h5>
                       <h5>Address : {{$item->address}}</h5>
-                      <h5>Payment Method : {{$item->payment_method}}</h5>
-                      <h5>Payment Status : {{$item->payment_status}}</h5>
-
+                      <h5>Payment method : {{$item->payment_method}}</h5>
+                      <h5>Payment status : {{$item->payment_status}}</h5>
+                      <h5>Order date & time : {{$item->created_at}}</h5>
                     </div>
                     
              </div>
@@ -44,7 +44,7 @@
                       <h5>Address : {{$item->address}}</h5>
                       <h5>Payment Method : {{$item->payment_method}}</h5>
                       <h5>Payment Status : {{$item->payment_status}}</h5>
-
+                      <h5>Order date & time : {{$item->created_at}}</h5>
                     </div>
                   <!-- <div class="col-sm-3">
              <div class="remove">
