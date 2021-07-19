@@ -31,7 +31,6 @@ Route::get('/logout', function () {
 
 
 Route::post("/login",[RealAdminController::class,'login']);
-
 Route::group(['middleware'=>['AdminCheck']],function(){
 
 Route::get("/adminhome",[RealAdminController::class,'create']);
@@ -58,11 +57,8 @@ Route::post('/ordereditprocess/{id}', [RealAdminController::class,'updatecustome
 
 Route::post('/auth/save',[MainController::class,'save'])->name('auth.save');
 Route::post('/auth/check',[MainController::class,'check'])->name('auth.check');
-
 Route::get('/auth/logout',[MainController::class,'logout'])->name('auth.logout');
 Route::get('/auth/register',[MainController::class,'register'])->name('auth.register');
-
-
 Route::get('/',[MainController::class,'login'])->name('auth.login');
 
 Route::group(['middleware'=>['AuthCheck']],function(){
